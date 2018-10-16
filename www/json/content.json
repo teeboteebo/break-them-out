@@ -1,0 +1,21 @@
+{
+  "history": {
+    "sv": [
+      {
+        "title": "Breakout",
+        "desc": ""
+      }
+    ],
+    "en": [
+      {
+        "title": "BREAKOUT",
+
+        "desc": "<strong>Breakout</strong> is an arcade game developed and published by Atari Inc, released on May 13, 1976. It was conceptualized by Nolan Bushnell and Steve Bristow, influenced by the 1972 Atari arcade game Pong, and built by Steve Wozniak aided by Steve Jobs. Breakout was the basis and inspiration for certain aspects of the Apple II personal computer. The game was ported to the Atari 2600 and was followed by a 1978 sequel, Super Breakout, which four years later became the pack-in game for the Atari 5200 console. Breakout spawned an entire genre of Breakout clones, and the concept found new legs with Taito's 1986 Arkanoid which itself found dozens of imitators.",
+
+        "gameplay": "Breakout begins with eight rows of bricks, with each two rows a different color. The color order from the bottom up is yellow, green, orange and red. Using a single ball, the player must knock down as many bricks as possible by using the walls and/or the paddle below to ricochet the ball against the bricks and eliminate them. If the player's paddle misses the ball's rebound, he or she will lose a turn. The player has three turns to try to clear two screens of bricks. Yellow bricks earn one point each, green bricks earn three points, orange bricks earn five points and the top-level red bricks score seven points each. The paddle shrinks to one-half its size after the ball has broken through the red row and hit the upper wall. Ball speed increases at specific intervals: after four hits, after twelve hits, and after making contact with the orange and red rows.",
+
+        "ports": "The original arcade version of Breakout was ported to the Atari 2600 by Brad Stewart. Brad Stewart and Ian Shepherd were both available to program Breakout for the 2600 and competed in the original version of Breakout for the programming rights; Brad won."
+      }
+    ]
+  }
+}
