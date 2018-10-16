@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8697,6 +8698,10 @@ body main {
 }
 body footer {
   background: black;
+}
+body footer p {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

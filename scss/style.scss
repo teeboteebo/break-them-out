@@ -7,6 +7,9 @@
 // Import old CSS from prototype
 @import "oldstyle";
 
+// Import 8 bit font (font-family: 'Press Start 2P', cursive;)
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 body {
   background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
   color: white;
@@ -18,5 +21,9 @@ body {
   }
   footer {
     background: black;
+    p {
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+    }
   }
 }
