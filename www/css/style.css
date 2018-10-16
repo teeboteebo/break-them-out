@@ -9659,7 +9659,7 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: #000;
+  background-color: #fff;
   border-radius: 50%;
   -webkit-animation: ball-animation-vertical 5s linear infinite alternate;
           animation: ball-animation-vertical 5s linear infinite alternate;
@@ -9726,9 +9726,9 @@ body main {
 }
 body main h2 {
   text-decoration: underline;
+  font-size: 2.5rem;
 }
 body footer {
   background: black;
 }
-
 /*# sourceMappingURL=style.css.map */
