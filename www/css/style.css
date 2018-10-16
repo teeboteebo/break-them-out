@@ -8687,6 +8687,16 @@ body {
 }
 body {
   background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
+  color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+body main {
+  flex: 1;
+}
+body footer {
+  background: black;
 }
 
 /*# sourceMappingURL=style.css.map */

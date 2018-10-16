@@ -1,12 +1,22 @@
 // Variable overrides for Bootstrap
-@import 'variable-overrides';
+@import "variable-overrides";
 
 // The whole Bootstrap library
-@import 'bootstrap/bootstrap';
+@import "bootstrap/bootstrap";
 
 // Import old CSS from prototype
-@import 'oldstyle';
+@import "oldstyle";
 
 body {
   background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
+  color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  main {
+    flex: 1;
+  }
+  footer {
+    background: black;
+  }
 }
