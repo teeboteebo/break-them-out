@@ -9716,12 +9716,19 @@ body {
           flex-direction: column;
   font-family: 'Press Start 2P', cursive;
 }
+body .center-me {
+  margin: 0 auto;
+}
 body main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
+body main h2 {
+  text-decoration: underline;
+}
 body footer {
   background: black;
 }
+
 /*# sourceMappingURL=style.css.map */

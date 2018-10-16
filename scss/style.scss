@@ -17,8 +17,14 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: 'Press Start 2P', cursive;
+  .center-me {
+    margin: 0 auto;
+  }
   main {
     flex: 1;
+    h2 {
+      text-decoration: underline;
+    }
   }
   footer {
     background: black;
