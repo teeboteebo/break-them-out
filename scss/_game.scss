@@ -31,7 +31,7 @@ body {
 .paddle {
   width: 200px;
   height: 30px;
-  background-color: #999;
+  background-color: #fff;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -48,7 +48,7 @@ body {
   position: absolute;
   height: 30px;
   width: 30px;
-  background-color: #000;
+  background-color: #fff;
   border-radius: 50%;
   animation: ball-animation-vertical 5s linear infinite alternate;
 }
