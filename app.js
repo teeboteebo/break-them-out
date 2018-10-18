@@ -7,3 +7,10 @@ const app = express();
 app.use(express.static('www'));
 // Start the web server on port 3000
 app.listen(3000,() => console.log('Listening on port 3000'));
+
+const Sass = require('./sass');
+const config = require('./config.json');
+
+for(let conf of config.sass){
+    new Sass(conf);
+}
