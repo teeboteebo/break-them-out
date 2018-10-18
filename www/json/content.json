@@ -54,5 +54,13 @@
         "card3": ""      
       }
     ]
+  },
+  "game": {
+    "sv": [
+      {
+        "score": "POÄNG:",
+        "lives": "LIVES:"
+      }
+    ]
   }
 }
