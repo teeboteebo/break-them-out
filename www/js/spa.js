@@ -23,7 +23,11 @@ frontendRouter(location.pathname);
 function frontendRouter(path){
   let routes = {
     '/': () => { $('body main > *').hide(); $('.start-page').show(); },
-    '/game': () => { $('body main > *').hide(); $('.game').show(); },
+    '/game': () => {
+      $('body main > *').hide();
+      $('.game').show();
+      startGame();
+    },
     '/history': () => { $('body main > *').hide(); $('.history').show(); },
     '/high-score': () => { $('body main > *').hide(); $('.high-score').show(); },
   };
