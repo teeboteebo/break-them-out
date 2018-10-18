@@ -54,5 +54,21 @@
         "card3": ""      
       }
     ]
+  },
+  "game": {
+    "sv": [
+      {
+        "score": "POÄNG:",
+        "lives": "LIV:",
+        "game-over": "DU FÖRLORADE - TRYCK ENTER FÖR ATT SPELA IGEN"
+      }
+    ],
+    "en": [
+      {
+        "score": "SCORE:",
+        "lives": "LIVES:",
+        "game-over": "GAME OVER - PRESS ENTER TO PLAY AGAIN"
+      }
+    ]
   }
 }
