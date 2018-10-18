@@ -5,8 +5,13 @@
 
 @import "bootstrap/bootstrap";
 
-// Import old CSS from prototype
-@import "oldstyle";
+// Features
+@import "buttons";
+@import "cards";
+@import "footer";
+@import "game";
+
+
 
 @import "history";
 
@@ -32,21 +37,6 @@ body {
     }
 
   }
-  footer {
-    background: black;
-  }
-
-  .btnGroup {
-    position: absolute;
-  }
-
-  .leftBtn  {
-    padding: 0px 15px;
-  }
-  .rightBtn  {
-    padding: 0px 15px;
-  }
-
 }
 
 .other-game{
@@ -56,14 +46,4 @@ body {
   min-height: 90vh;
   position: relative;
 
-}
-.img-box{
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.bk-opacity{
-  background-color: rgba($color: black, $alpha: .5);
 }

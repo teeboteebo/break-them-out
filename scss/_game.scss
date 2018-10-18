@@ -8,6 +8,16 @@ body {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.other-game{
+  color: white;
+}
+
+.game {
+  min-height: 90vh;
+  position: relative;
+
+}
+
 .score {
   position: absolute;
   top: 5px;;

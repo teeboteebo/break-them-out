@@ -8502,6 +8502,33 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.btnGroup {
+  position: absolute;
+}
+
+.leftBtn {
+  padding: 0px 15px;
+}
+
+.rightBtn {
+  padding: 0px 15px;
+}
+
+.img-box {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.bk-opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  background: black;
+}
+
 html {
   height: 100%;
 }
@@ -8510,6 +8537,15 @@ body {
   margin: 0;
   height: 100%;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.other-game {
+  color: white;
+}
+
+.game {
+  min-height: 90vh;
+  position: relative;
 }
 
 .score {
@@ -8607,22 +8643,6 @@ body main h2 {
   font-size: 2.5rem;
 }
 
-body footer {
-  background: black;
-}
-
-body .btnGroup {
-  position: absolute;
-}
-
-body .leftBtn {
-  padding: 0px 15px;
-}
-
-body .rightBtn {
-  padding: 0px 15px;
-}
-
 .other-game {
   color: white;
 }
@@ -8630,15 +8650,4 @@ body .rightBtn {
 .game {
   min-height: 90vh;
   position: relative;
-}
-
-.img-box {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.bk-opacity {
-  background-color: rgba(0, 0, 0, 0.5);
 }
