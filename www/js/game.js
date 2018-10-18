@@ -16,9 +16,22 @@ function startGame(){
     if(e.which === 13){ playAgain(); }
   });
 
-  $(window).keyup(function(){
-    currentKey = '';
-  });
+$(".rightBtn").mousedown(function(){
+  currentKey= "right";
+ });
+ $(".leftBtn").mousedown(function(){
+  currentKey= "left";
+ });
+ $(".rightBtn").mouseup(function(){
+  currentKey= "";
+ });
+ $(".leftBtn").mouseup(function(){
+  currentKey= "";
+ });
+
+$(window).keyup(function(){
+  currentKey = '';
+});
 
   // Game loop
   setInterval(function(){
