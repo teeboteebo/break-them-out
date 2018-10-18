@@ -48,7 +48,7 @@ body {
 }
 
 .other-game{
-  color: black;
+  color: white;
 }
 .game {
   min-height: 90vh;
@@ -60,4 +60,8 @@ body {
     height: 200px;
     margin: 0 auto;
     padding: 10px;
+}
+
+.bk-opacity{
+  background-color: rgba($color: red, $alpha: 0);
 }
