@@ -26,8 +26,21 @@ body {
       text-decoration: underline;
       font-size: 2.5rem;
     }
+
   }
   footer {
     background: black;
   }
+
+  .gameBtnRow {
+    margin-bottom: 10px;
+  }
+
+  .leftBtn  {
+    padding: 0px 15px;
+  }
+  .rightBtn  {
+    padding: 0px 15px;
+  }
+
 }
