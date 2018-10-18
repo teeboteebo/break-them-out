@@ -38,5 +38,21 @@
         "highscore": "HighScore"
       }
     ]
+  },
+  "cards": {
+    "sv": [
+      {
+        "card1": "",
+        "card2": "",
+        "card3": ""
+      }
+    ],
+    "en": [
+      {
+        "card1": "",
+        "card2": "",
+        "card3": ""      
+      }
+    ]
   }
 }
