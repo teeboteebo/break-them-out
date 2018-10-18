@@ -7,7 +7,7 @@
         "watchFolder": "./scss",
         "file": "./scss/style.scss",
         "outFile": "./www/css/style.css",
-        "outputStyle": "compressed"
+        "outputStyle": "expanded"
       }
     }
   ]
