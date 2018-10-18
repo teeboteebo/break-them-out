@@ -45,21 +45,21 @@
       </div>
     </nav>
   </header>
-  <main class="container">
-    <section class="row mt-5">
-      <h2 class="col-12 text-center mt-5 ">
-        BREAKOUT
-      </h2>
-    </section>
-    <section class="row">
-      <a role="button" href="/game.html" class="btn btn-outline-light center-me mt-5">PLAY NOW</a>
-    </section>
-    <!--  Kevin cards -->
-    <section class="container">
+  <main>
+
+    <section class="container start-page" style="display: none;">
+      <section class="row mt-5">
+        <h2 class="col-12 text-center mt-5 ">
+          BREAKOUT
+        </h2>
+      </section>
+      <section class="row">
+        <a role="button" href="/game" class="btn btn-outline-light center-me mt-5">PLAY NOW</a>
+      </section>
       <div class="card-deck other-game mt-5">
-        <div class="card text-center bk-opacity">
+       <div class="card text-center bk-opacity">
           <div class="img-box">
-            <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
+           <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
           </div>
           <div class="card-body">
             <h5 class="card-title">Sparknoid</h5>
@@ -77,7 +77,18 @@
             <a role="button" href="/game.html" class="btn btn-outline-light">PLAY</a>
           </div>
         </div>
-    </section>
+        <div class="card text-center bk-opacity">
+          <div class="img-box">
+            <img class="card-img-top" src="/imgs/atari.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Atari breakout</h5>
+            <p class="card-text">Go to Atari</p>
+            <a role="button" href="https://www.crazygames.com/game/atari-breakout" class="btn btn-outline-light">PLAY</a>
+          </div>
+        </div>
+      </div>
+
     </section> <!-- END_START-PAGE -->
     <section class="container game border border-light" style="display: none;">
       <div class="score">SCORE: <span>00000</span></div>
@@ -85,11 +96,9 @@
       <div class="ballX"><div class="ballY"></div></div>
       <div class="paddle"></div>
       <div class="game-over">GAME OVER - PRESS ENTER TO PLAY AGAIN</div>
-      <section class ="row gameBtnRow">
-        <section class="col-12 text-center">
-          <button class="leftBtn"> <-- </button>
-          <button class="rightBtn" > --> </button> 
-        </section>
+      <section class ="row btnGroup">
+        <button class="leftBtn"> <-- </button>
+        <button class="rightBtn" > --> </button>
       </section>
     </section> <!-- END_GAME -->
     <section class="container history" style="display: none;">
@@ -107,8 +116,6 @@
       </section>
     </section> <!-- END_HIGHSCORE -->
   </main>
-
-
 
   <footer class="container-fluid">
     <section class="row">
