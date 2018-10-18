@@ -5,8 +5,12 @@
 
       "desc": "<strong>Breakout</strong> är ett arkadspel utvecklat  och publicerat av Atari Inc som släpptes den 13 maj 1976.  Konceptet till spelet gjordes av Nolan Bushnell och Steve Bristow, som var influerade av Ataris arkadspel Pong från 1972, och byggdes av Steve Wozniak med hjälp av Steve Jobs. Breakout var grunden och inspirationen för vissa aspekter av Apple II-persondatorn. Spelet portades till Atari 2600 och följdes upp 1978 av Super Breakout, som fyra år senare ingick i Atari 5200-konsolen. Breakout skapade en hel genre av Breakout-kloner och konceptet fick nytt liv med Taitos Arkanoid från 1986 som själv skapade ett dussintal efterapare.",
 
+      "gametitle": "Spelet",
+
       "gameplay": "Breakout börjar med åtta rader av tegelstenar där varannan rad följs av en ny färg. Färgordningen från botten och upp är gul, grön, orange och röd. Med en enda boll måste spelaren slå ner så många tegelstenar som möjligt genom att använda väggarna och/eller plattan nedan för att studsa tillbaka mot tegelstenarna och eliminera dem. Om spelaren inte lyckas studsa tillbaka bollen kommer hen att förlora ett liv. Spelaren har tre liv på sig att försöka rensa skärmen från två omgångar av tegelstenar. Gula tegelstenar ger en poäng vardera, gröna tegelstenar ger tre poäng vardera, orange ger fem poäng och de röda tegelstenarna längst upp ger sju poäng vardera. Plattan krymper till hälften av storleken efter att bollen har brutit igenom den röda raden och träffat taket. Bollhastigheten ökar med specifika intervaller: efter fyra träffar, efter tolv träffar och efter att träffat orange och röd rad.",
       
+      "portstitle": "Ports",
+
       "ports": "Den ursprungliga arkadversionen av Breakout var portad till Atari 2600 av Brad Stewart. Brad Stewart och Ian Shepherd var båda tillgängliga för att programmera Breakout för 2600 och tävlade i originalversionen av Breakout om programmeringsrättigheterna, Brad vann."
     },
     "en": {
@@ -14,7 +18,11 @@
 
       "desc": "<strong>Breakout</strong> is an arcade game developed and published by Atari Inc, released on May 13, 1976. It was conceptualized by Nolan Bushnell and Steve Bristow, influenced by the 1972 Atari arcade game Pong, and built by Steve Wozniak aided by Steve Jobs. Breakout was the basis and inspiration for certain aspects of the Apple II personal computer. The game was ported to the Atari 2600 and was followed by a 1978 sequel, Super Breakout, which four years later became the pack-in game for the Atari 5200 console. Breakout spawned an entire genre of Breakout clones, and the concept found new legs with Taito's 1986 Arkanoid which itself found dozens of imitators.",
 
+      "gametitle": "Gameplay",
+
       "gameplay": "Breakout begins with eight rows of bricks, with each two rows a different color. The color order from the bottom up is yellow, green, orange and red. Using a single ball, the player must knock down as many bricks as possible by using the walls and/or the paddle below to ricochet the ball against the bricks and eliminate them. If the player's paddle misses the ball's rebound, he or she will lose a turn. The player has three turns to try to clear two screens of bricks. Yellow bricks earn one point each, green bricks earn three points, orange bricks earn five points and the top-level red bricks score seven points each. The paddle shrinks to one-half its size after the ball has broken through the red row and hit the upper wall. Ball speed increases at specific intervals: after four hits, after twelve hits, and after making contact with the orange and red rows.",
+
+      "portstitle": "Ports",
 
       "ports": "The original arcade version of Breakout was ported to the Atari 2600 by Brad Stewart. Brad Stewart and Ian Shepherd were both available to program Breakout for the 2600 and competed in the original version of Breakout for the programming rights; Brad won."
     }
