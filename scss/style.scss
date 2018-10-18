@@ -30,16 +30,32 @@ body {
       text-decoration: underline;
       font-size: 2.5rem;
     }
+
   }
   footer {
     background: black;
   }
+
+  .gameBtnRow {
+    margin-bottom: 15px;
+  }
+
+  .leftBtn  {
+    padding: 0px 15px;
+  }
+  .rightBtn  {
+    padding: 0px 15px;
+  }
+
 }
 
 .other-game{
   color: black;
 }
+.game {
+  min-height: 90vh;
 
+}
 .img-box{
     width: 200px;
     height: 200px;
