@@ -8502,6 +8502,29 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+body {
+  background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
+  background-size: cover;
+  color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body .center-me {
+  margin: 0 auto;
+}
+
+body main {
+  flex: 1;
+}
+
+body main h2 {
+  text-decoration: underline;
+  font-size: 2.5rem;
+}
+
 .btnGroup {
   position: absolute;
 }
@@ -8536,7 +8559,6 @@ html {
 body {
   margin: 0;
   height: 100%;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 .other-game {
@@ -8615,39 +8637,11 @@ body {
   }
 }
 
-.history-img img {
+.history {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.history .history-img img {
   padding-top: 46px;
   width: 100%;
-}
-
-body {
-  background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
-  background-size: cover;
-  color: white;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  font-family: 'Press Start 2P', cursive;
-}
-
-body .center-me {
-  margin: 0 auto;
-}
-
-body main {
-  flex: 1;
-}
-
-body main h2 {
-  text-decoration: underline;
-  font-size: 2.5rem;
-}
-
-.other-game {
-  color: white;
-}
-
-.game {
-  min-height: 90vh;
-  position: relative;
 }
