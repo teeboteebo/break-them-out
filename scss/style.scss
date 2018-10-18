@@ -5,63 +5,12 @@
 
 @import "bootstrap/bootstrap";
 
-// Import old CSS from prototype
-@import "oldstyle";
+// Features
+@import "body-related"
+@import "buttons";
+@import "cards";
+@import "footer";
+@import "game";
 
 // Import 8 bit font (font-family: 'Press Start 2P', cursive;)
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-
-body {
-  background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
-  background-size: cover;
-  color: white;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  font-family: 'Press Start 2P', cursive;
-  .center-me {
-    margin: 0 auto;
-  }
-  main {
-    flex: 1;
-    h2 {
-      text-decoration: underline;
-      font-size: 2.5rem;
-    }
-
-  }
-  footer {
-    background: black;
-  }
-
-  .btnGroup {
-    position: absolute;
-  }
-
-  .leftBtn  {
-    padding: 0px 15px;
-  }
-  .rightBtn  {
-    padding: 0px 15px;
-  }
-
-}
-
-.other-game{
-  color: white;
-}
-.game {
-  min-height: 90vh;
-  position: relative;
-
-}
-.img-box{
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.bk-opacity{
-  background-color: rgba($color: black, $alpha: .5);
-}
