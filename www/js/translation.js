@@ -2,7 +2,7 @@ let historyDaa;
 
 $.getJSON('/json/content.json', function (data) {
   historyData = data;
-  createHistory("en");
+  createHistory("sv");
 });
 
 function createHistory(lang) {
