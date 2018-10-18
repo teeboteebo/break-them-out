@@ -14,3 +14,8 @@ const config = require('./config.json');
 for(let conf of config.sass){
     new Sass(conf);
 }
+
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './www/index.html'));
+});
