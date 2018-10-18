@@ -1,5 +1,6 @@
 // Require the express module
 const express = require('express');
+const path = require('path');
 // Create a new web server
 const app = express();
 // Tell the web server to serve files
