@@ -8645,3 +8645,7 @@ body {
   padding-top: 46px;
   width: 100%;
 }
+
+.history p {
+  font-size: 0.8rem;
+}
