@@ -27,8 +27,8 @@
             <a class="nav-link" href="/history">History</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="/highscore">HighScore</a>
-            </li>
+            <a class="nav-link" href="/highscore.html">HighScore</a>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="/links.html" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -45,92 +45,52 @@
       </div>
     </nav>
   </header>
-  <main>
-    <section class="container start-page" style="display: none;">
-      <section class="row mt-5">
-        <h2 class="col-12 text-center mt-5 ">
-          BREAKOUT
-        </h2>
-      </section>
-      <section class="row">
-        <a role="button" href="/game" class="btn btn-outline-light center-me my-5">PLAY NOW</a>
-      </section>
-      <section class="container">
-        <div class="row other-game">
-          <div class="col-lg-4 col-xl-4 mt-4">
-            <div class="card text-center">
-              <div class="img-box">
-                <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
-              </div>
-              <div class="card-body h-100">
-                <h5 class="card-title">Sparknoid</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Play</a>
-              </div>
-            </div>
+  <main class="container">
+    <section class="row mt-5">
+      <h2 class="col-12 text-center mt-5 ">
+        BREAKOUT
+      </h2>
+    </section>
+    <section class="row">
+      <a role="button" href="/game.html" class="btn btn-outline-light center-me mt-5">PLAY NOW</a>
+    </section>
+  </main>
+
+  <!--  Kevin cards -->
+  <section class="container">
+    <div class="card-deck other-game mt-5">
+        <div class="card text-center bk-opacity">
+          <div class="img-box">
+            <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
           </div>
-          <div class="col-lg-4 col-xl-4 mt-4">
-            <div class="card text-center">
-              <div class="img-box">
-                <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Spinball</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Play</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-xl-4 mt-4">
-            <div class="card text-center">
-              <div class="img-box">
-                <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Atari breakout</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                  content.</p>
-                <a href="#" class="btn btn-primary">Play</a>
-              </div>
-            </div>
+          <div class="card-body">
+            <h5 class="card-title">Sparknoid</h5>
+            <p class="card-text">Go to Sparkanoid</p>
+            <a role="button" href="/game.html" class="btn btn-outline-light">PLAY</a>
           </div>
         </div>
-      </section>
-    </section> <!-- END_START-PAGE -->
-    <section class="container game border border-light" style="display: none;">
-      <section class="row mt-5">
-        <section class="col-12">
-          <div class="score">SCORE: <span>00000</span></div>
-          <div class="lives">LIVES: <span>3</span></div>
-          <div class="ballX"><div class="ballY"></div></div>
-          <div class="paddle"></div>
-          <div class="game-over">GAME OVER - PRESS ENTER TO PLAY AGAIN</div>
-        </section>
-      </section>
-      <section class ="row gameBtnRow">
-        <section class="col-12 text-center">
-          <button class="leftBtn"> <-- </button>
-          <button class="rightBtn" > --> </button> 
-        </section>
-      </section>
-    </section> <!-- END_GAME -->
-    <section class="container history" style="display: none;">
-      <section class="row mt-5">
-        <section class="col-12">
-
-        </section>
-      </section>
-    </section> <!-- END_HISTORY -->
-    <section class="container high-score" style="display: none;">
-      <section class="row mt-5">
-        <section class="col-12">
-
-        </section>
-      </section>
-    </section> <!-- END_HISTORY -->
-  </main>
+        <div class="card text-center bk-opacity">
+          <div class="img-box">
+            <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Spinball</h5>
+            <p class="card-text">Go to Spinball</p>
+            <a role="button" href="/game.html" class="btn btn-outline-light">PLAY</a>
+          </div>
+        </div>
+        <div class="card text-center bk-opacity">
+          <div class="img-box">
+            <img class="card-img-top" src="/imgs/atari.jpg" alt="Card image cap">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Atari breakout</h5>
+            <p class="card-text">Go to Atari</p>
+            <a role="button" href="https://www.crazygames.com/game/atari-breakout" class="btn btn-outline-light">PLAY</a>
+          </div>
+        </div>
+    </div>
+  </section>
   <footer class="container-fluid">
     <section class="row">
       <p class="col-12 text-center mt-5 mb-4">
