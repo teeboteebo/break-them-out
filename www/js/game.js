@@ -15,6 +15,19 @@ $(window).keydown(function(e){
   if(e.which === 13){ playAgain(); }
 });
 
+$(".rightBtn").mousedown(function(){
+  currentKey= "right";
+ });
+ $(".leftBtn").mousedown(function(){
+  currentKey= "left";
+ });
+ $(".rightBtn").mouseup(function(){
+  currentKey= "";
+ });
+ $(".leftBtn").mouseup(function(){
+  currentKey= "";
+ });
+
 $(window).keyup(function(){
   currentKey = '';
 });
