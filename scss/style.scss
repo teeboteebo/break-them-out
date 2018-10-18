@@ -12,6 +12,7 @@
 
 body {
   background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
+  background-size: cover;
   color: white;
   display: flex;
   min-height: 100vh;
@@ -30,4 +31,15 @@ body {
   footer {
     background: black;
   }
+}
+
+.other-game{
+  color: black;
+}
+
+.img-box{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 10px;
 }
