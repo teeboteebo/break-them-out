@@ -42,16 +42,16 @@
   "cards": {
     "sv": [
       {
-        "card1": "",
-        "card2": "",
-        "card3": ""
+        "card1": "Gå till Sparknoid",
+        "card2": "Gå till Spinball",
+        "card3": "Gå till Atari Breakout"
       }
     ],
     "en": [
       {
-        "card1": "",
-        "card2": "",
-        "card3": ""      
+        "card1": "Go to Sparknoid",
+        "card2": "Go to Spinball",
+        "card3": "Go to Atari Breakout"      
       }
     ]
   },
