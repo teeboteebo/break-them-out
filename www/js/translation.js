@@ -27,7 +27,10 @@ function createNavbar(lang){
   playNowStartPage.html('<a role="button" href="/game" class="btn btn-outline-light center-me my-5">' + a.playstart + '</a>');
   historyPage.html('<a class="nav-link" href="/history">' + a.history + '</a>');
   highScore.html('<a class="nav-link" href="/high-score">' + a.highscore + '</a>');
-  otherVersions.html('<a class="nav-link dropdown-toggle" href="/links.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' + a.versions + '</a>')
+  otherVersions.html('<a class="nav-link dropdown-toggle" href="/links.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' + a.versions + '</a>' + '<div class="dropdown-menu" aria-labelledby="navbarDropdown">' + 
+  '<a class="dropdown-item" href="http://www.spelo.se/arkad/sparkanoid" target="_blank">' + "Sparkanoid" + '</a>' +
+  '<a class="dropdown-item" href="http://o.www.spela.se/spel_/breakout_5" target="_blank">' + "Breakout 5" + '</a>' + 
+  '<a class="dropdown-item" href="https://www.crazygames.com/game/atari-breakout" target="_blank">' + "Atari Breakout" + '</a>' + '</div>')
 }
 
 function createStartPage(lang){
