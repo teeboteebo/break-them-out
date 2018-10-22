@@ -192,9 +192,13 @@ function loadGame() {
     });
 
     $(".rightBtn").on("touchstart mousedown", function () {
+      console.log("keysPressed");
+
       keysPressed.right = true;
     });
     $(".leftBtn").on("touchstart mousedown", function () {
+      console.log("keysPressed");
+
       keysPressed.left = true;
     });
     $(".rightBtn").on("touchend mouseup", function () {
