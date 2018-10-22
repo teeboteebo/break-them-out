@@ -8637,6 +8637,12 @@ body {
   border-radius: 50%;
 }
 
+header nav .swe-btn, header nav .eng-btn {
+  cursor: pointer;
+  height: 24px;
+  width: 40px;
+}
+
 .history {
   background-color: rgba(0, 0, 0, 0.5);
 }
