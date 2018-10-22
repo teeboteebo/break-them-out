@@ -1,4 +1,3 @@
-loadGame();
 function loadGame() {
   // Main variables
 <<<<<<< Updated upstream
@@ -11,7 +10,7 @@ function loadGame() {
   const initialBallSpeed = 350;
   const paddle = {};
   const ball = {};
-  const gameBorders = $('.game')[0].getBoundingClientRect();
+  let gameBorders = $('.game')[0].getBoundingClientRect();
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -33,6 +32,8 @@ function loadGame() {
 
   function updateGame(deltaTime) {
     if (paused) { return; }
+    gameBorders = $('.game')[0].getBoundingClientRect();
+
     movePaddle(deltaTime);
     moveBall(deltaTime);
   }
@@ -49,6 +50,7 @@ function loadGame() {
   function moveBall(deltaTime) {
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
+    console.log(ball.direction.x * ball.speed * deltaTime);
 
     if (!collisionDetectBallAndGame()) { return; }
     collisionDetectBallAndBricks();
@@ -56,6 +58,7 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
+    console.log(ball);
   }
 
   function calculatePaddleDirection() {
@@ -217,13 +220,16 @@ $(window).keyup(function(){
   }
 
   function setupKeyListeners() {
+
     $(window).keydown(function (e) {
+      console.log("keysPressed");
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
     });
 
     $(window).keyup(function (e) {
+      console.log("keyReleased");
       if (e.which === 37) { keysPressed.left = false; }
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
