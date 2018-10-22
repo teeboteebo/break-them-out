@@ -8503,7 +8503,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
-  background-image: url("http://hdwallpapersbuzz.com/wp-content/uploads/2017/08/8-bit-pixel-art-wallpaper-8.png");
+  background-image: url("/imgs/8bit-wallpaper.png");
+  background-color: #000;
   background-size: cover;
   color: white;
   display: flex;
