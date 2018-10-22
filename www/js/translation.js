@@ -15,3 +15,11 @@ function createHistory(lang) {
   game.html("<h3>" + a.gametitle + "</h3>" + "<p>" + a.gameplay + "</P>" + "<h3>" + a.portstitle + "</h3>");
   ports.html("<p>" + a.ports + "</p>");
 }
+
+$('.swe-btn').click(function () {
+  createHistory('sv');
+});
+
+$('.eng-btn').click(function () {
+  createHistory('en');
+});
