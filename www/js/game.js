@@ -1,7 +1,6 @@
 loadGame();
 function loadGame() {
   // Main variables
-<<<<<<< Updated upstream
   let lives;
   let score;
   let paused;
@@ -79,49 +78,6 @@ function loadGame() {
     } else if (ball.left + ball.width > gameBorders.right) {
       ball.left = gameBorders.right - ball.width;
       ball.direction.x *= -1;
-=======
-  let lives = 3;
-  let score = 0;
-  let paused = false;
-  let $ballX = $('.ballX');
-  let $ballY = $('.ballY');
-  let $paddle = $('.paddle');
-  let paddleStep = 80;
-  let currentKey;
-
-  // Read keys
-  $(window).keydown(function(e){
-    if(e.which === 37){ currentKey = 'left'; }
-    if(e.which === 39){ currentKey = 'right'; }
-    if(e.which === 13){ playAgain(); }
-  });
-
-$(".rightBtn").on("touchstart mousedown",function(){
-  currentKey= "right";
- });
- $(".leftBtn").on("touchstart mousedown",function(){
-  currentKey= "left";
- });
- $(".rightBtn").on("touchend mouseup",function(){
-  currentKey= "";
- });
- $(".leftBtn").on("touchend mouseup",function(){
-  currentKey= "";
- });
-
-$(window).keyup(function(){
-  currentKey = '';
-});
-
-  // Game loop
-  setInterval(function(){
-
-    // paddle movement
-    let paddleX = $paddle.position().left;
-    if(currentKey == 'left' && paddleX > 0){
-      let step = Math.min(paddleStep, paddleX)
-      $paddle.animate({left : paddleX - step}, 100);
->>>>>>> Stashed changes
     }
 
     if (ball.top < gameBorders.top) {
@@ -228,7 +184,33 @@ $(window).keyup(function(){
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
     });
+
+    $(".rightBtn").on("touchstart mousedown", function () {
+      keysPressed.right = true;
+    });
+    $(".leftBtn").on("touchstart mousedown", function () {
+      keysPressed.left = true;
+    });
+    $(".rightBtn").on("touchend mouseup", function () {
+      keysPressed.right = false;
+    });
+    $(".leftBtn").on("touchend mouseup", function () {
+      keysPressed.left = false;
+    });
   }
+
+  $(".rightBtn").on("touchstart mousedown", function () {
+    currentKey = "right";
+  });
+  $(".leftBtn").on("touchstart mousedown", function () {
+    currentKey = "left";
+  });
+  $(".rightBtn").on("touchend mouseup", function () {
+    currentKey = "";
+  });
+  $(".leftBtn").on("touchend mouseup", function () {
+    currentKey = "";
+  });
 
   function resetPaddle() {
     paddle.$ = $('.paddle');
