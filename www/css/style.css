@@ -8559,11 +8559,9 @@ body main h2 {
   right: 0px;
 }
 
-.img-box {
-  width: 200px;
-  height: 200px;
+.img-w {
+  width: 80%;
   margin: 0 auto;
-  padding: 10px;
 }
 
 .bk-opacity {
