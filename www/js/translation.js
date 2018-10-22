@@ -1,5 +1,3 @@
-let historyDaa;
-
 $.getJSON('/json/content.json', function (data) {
   historyData = data;
   createHistory("en");
