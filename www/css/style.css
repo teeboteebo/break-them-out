@@ -8532,7 +8532,7 @@ body main h2 {
   height: 100%;
   left: 0px;
   top: 0px;
-  text-align: center;
+  text-align: bottom;
 }
 
 .btnGroup button {
@@ -8543,11 +8543,12 @@ body main h2 {
   font-size: 50px;
   height: 100%;
   width: 40%;
+  outline: none;
 }
 
 @media only screen and (min-width: 1200px) {
   .btnGroup button {
-    display: none;
+    display: 0px;
   }
 }
 
