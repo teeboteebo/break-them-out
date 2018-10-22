@@ -46,16 +46,32 @@
   "cards": {
     "sv": [
       {
-        "card1": "",
-        "card2": "",
-        "card3": ""
+        "card-headline":"Testa på dessa andra spel från andra webbsidor!",
+        "card1-name": "Sparkanoid",
+        "card1-desc": "Gå till Sparkanoid",
+
+        "card2-name": "Breakout 5",
+        "card2-desc": "Gå till Breakout 5",
+
+        "card3-name": "Atari Breakout",
+        "card3-desc": "Gå till Atari Breakout",
+
+        "card-button": "SPELA"
       }
     ],
     "en": [
-      {
-        "card1": "",
-        "card2": "",
-        "card3": ""      
+      { 
+        "card-headline":"Try out these other games from other websites!",
+        "card1-name": "Sparkanoid",
+        "card1": "Go to Sparkanoid",
+
+        "card2-name": "Breakout 5",
+        "card2": "Go to Breakout 5",
+
+        "card3-name": "Atari Breakout",
+        "card3": "Go to Atari Breakout",
+
+        "card-button": "PLAY"   
       }
     ]
   },
