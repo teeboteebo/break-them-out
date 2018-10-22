@@ -8545,7 +8545,7 @@ body main h2 {
   width: 40%;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
   .btnGroup button {
     display: none;
   }
