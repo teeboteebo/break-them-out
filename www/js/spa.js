@@ -23,9 +23,13 @@ frontendRouter(location.pathname);
 function frontendRouter(path){
   let routes = {
     '/': () => { $('body main > *').hide(); $('.start-page').show(); },
-    '/game': () => { $('body main > *').hide(); $('.game').show(); },
-    '/cool': () => { $('body main > *').hide(); $('.cool').show(); },
-    '/404': () => { $('body main > *').hide(); $('.the404').show(); },
+    '/game': () => {
+      $('body main > *').hide();
+      $('.game').show();
+      loadGame();
+    },
+    '/history': () => { $('body main > *').hide(); $('.history').show(); },
+    '/high-score': () => { $('body main > *').hide(); $('.high-score').show(); },
   };
   // no path found then change path to '/404';
   path = routes[path] ? path : '/404';

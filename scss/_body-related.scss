@@ -1,0 +1,21 @@
+body {
+  background-image: url("/imgs/8bit-wallpaper.png");
+  background-color: #000;
+  background-size: cover;
+  color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Press Start 2P', cursive;
+  .center-me {
+    margin: 0 auto;
+  }
+  main {
+    flex: 1;
+    h2 {
+      text-decoration: underline;
+      font-size: 2.5rem;
+    }
+
+  }
+}
