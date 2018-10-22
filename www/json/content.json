@@ -43,6 +43,18 @@
       }
     ]
   },
+  "main-button": {
+    "sv": [
+      {
+        "button-play": "SPELA NU"
+      }
+    ],
+    "en": [
+      {
+        "button-play": "PLAY NOW"
+      }
+    ]
+  },
   "cards": {
     "sv": [
       {
