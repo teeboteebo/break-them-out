@@ -16,6 +16,15 @@ function createHistory(lang) {
   ports.html("<p>" + a.ports + "</p>");
 }
 
+function createNavbar(lang){
+  let playNow = $(".play-now");
+  let historyPage = $(".history-page");
+  let highScore = $(".highscore-page");
+  let a = navbarData.navbar[lang];
+
+  playNow.html(a.play);
+}
+
 $('.swe-btn').click(function () {
   createHistory('sv');
 });
