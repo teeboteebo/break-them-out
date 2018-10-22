@@ -10,11 +10,8 @@ function createHistory(lang) {
   let ports = $(".history-ports");
   let a = historyData.history[lang];
 
-  title.append("<h3>" + a.title + "</h3>");
-  title.append("<p>" + a.desc + "</p>");
-  titleImg.append('<img src="imgs/arcadeflyer.jpg">');
-  game.append("<h3>" + a.gametitle + "</h3>");
-  game.append("<p>" + a.gameplay + "</P>");
-  game.append("<h3>" + a.portstitle + "</h3>");
-  ports.append("<p>" + a.ports + "</p>");
+  title.html("<h3>" + a.title + "</h3>" + "<p>" + a.desc + "</p>");
+  titleImg.html('<img src="imgs/arcadeflyer.jpg">');
+  game.html("<h3>" + a.gametitle + "</h3>" + "<p>" + a.gameplay + "</P>" + "<h3>" + a.portstitle + "</h3>");
+  ports.html("<p>" + a.ports + "</p>");
 }
