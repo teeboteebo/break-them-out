@@ -2,3 +2,9 @@
 .bk-opacity{
   background-color: rgba($color: black, $alpha: .5);
 }
+
+@media only screen and (min-width: 600px) {
+  .my-cards{
+    padding-top: 2rem;
+  }
+} 
