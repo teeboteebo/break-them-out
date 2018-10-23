@@ -8559,11 +8559,6 @@ body main h2 {
   right: 0px;
 }
 
-.img-w {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .bk-opacity {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -8652,4 +8647,5 @@ header nav .swe-btn, header nav .eng-btn {
 
 .history p {
   font-size: 0.8rem;
+  line-height: 1.4rem;
 }
