@@ -8563,6 +8563,12 @@ body main h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+@media only screen and (max-width: 600px) {
+  .my-cards {
+    padding-top: 2rem;
+  }
+}
+
 footer {
   background: black;
 }
@@ -8648,4 +8654,18 @@ header nav .swe-btn, header nav .eng-btn {
 .history p {
   font-size: 0.8rem;
   line-height: 1.4rem;
+}
+
+@media (min-width: 576px) {
+  .history p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  h3 {
+    margin: 1.2rem 0;
+  }
 }
