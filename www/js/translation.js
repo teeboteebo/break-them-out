@@ -1,5 +1,6 @@
 $.getJSON('/json/content.json', function (data) {
   jsonData = data;
+  createHistory("en");
 });
 
 function createHistory(lang) {
