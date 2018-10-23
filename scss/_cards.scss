@@ -1,10 +1,11 @@
-.img-box{
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    padding: 10px;
-}
 
 .bk-opacity{
   background-color: rgba($color: black, $alpha: .5);
 }
+
+@media only screen and (max-width: 600px) {
+  .my-cards{
+    padding-top: 2rem;
+  }
+} 
+

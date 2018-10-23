@@ -10,7 +10,7 @@
 <body>
   <header>
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar navbar-dark">
+    <nav class="navbar navbar-expand-xl navbar navbar-dark">
       <a class="navbar-brand" href="/">
         <img src="/imgs/logo.png" alt="A pixelated breakout logo" href="/">
       </a>
@@ -31,10 +31,10 @@
           <li class="nav-item mx-3 highscore-page">
             <a class="nav-link" href="/high-score">HighScore</a>
           </li>
-          <li class="nav-item dropdown mx-3">
+          <li class="nav-item dropdown mx-3 other-versions">
             <a class="nav-link dropdown-toggle" href="/links.html" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              BestOfTheWebVersions
+              Other Versions
             </a>
             <!--Put BreakOut links here-->
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -61,36 +61,40 @@
       <section class="row play-now-start">
         <a role="button" href="/game" class="btn btn-outline-light center-me my-5">PLAY NOW</a>
       </section>
-      <div class="card-deck other-game mt-5">
-        <div class="card text-center bk-opacity border border-light">
-          <div class="img-box">
-           <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Sparknoid</h5>
-            <p class="card-text">Go to Sparkanoid</p>
-            <a role="button" href="http://www.spelo.se/arkad/sparkanoid" target="_blank" class="btn btn-outline-light">PLAY</a>
-          </div>
+      <div class="col-12  text-center bk-opacity mt-2 card-headline">
+        <!-- h3 ska bort och läggas in med JSON-->
+        <h3>Try out these other games from other websites!</h3>
+      </div>
+      <div class="row other-game mt-4">
+        <div class="my-cards col-xs-12 col-md-4">
+            <div class="card text-center bk-opacity border-light">
+                <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
+               <div class="card-body card1">
+                 <h5 class="card-title">Sparknoid</h5>
+                 <p class="card-text">Go to Sparkanoid</p>
+                 <a role="button" href="http://www.spelo.se/arkad/sparkanoid" target="_blank" class="btn btn-outline-light">PLAY</a>
+               </div>
+             </div>
         </div>
-        <div class="card text-center bk-opacity border border-light">
-          <div class="img-box">
-            <img class="card-img-top" src="/imgs/breakout-5.jpg" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Breakout 5</h5>
-            <p class="card-text">Go to Breakout 5</p>
-            <a role="button" href="http://o.www.spela.se/spel_/breakout_5" target="_blank" class="btn btn-outline-light">PLAY</a>
-          </div>
+        <div class="my-cards col-12 col-md-4">
+            <div class="card text-center bk-opacity border-light">
+                <img class="card-img-top" src="/imgs/breakout-5.jpg" alt="Card image cap">
+              <div class="card-body card2">
+                <h5 class="card-title">Breakout 5</h5>
+                <p class="card-text">Go to Breakout 5</p>
+                <a role="button" href="http://o.www.spela.se/spel_/breakout_5" target="_blank" class="btn btn-outline-light">PLAY</a>
+              </div>
+            </div>
         </div>
-        <div class="card text-center bk-opacity border border-light">
-          <div class="img-box">
-            <img class="card-img-top" src="/imgs/atari.jpg" alt="Card image cap">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Atari breakout</h5>
-            <p class="card-text">Go to Atari</p>
-            <a role="button" href="https://www.crazygames.com/game/atari-breakout" target="_blank" class="btn btn-outline-light">PLAY</a>
-          </div>
+        <div class="my-cards col-12 col-md-4">
+            <div class="card text-center bk-opacity border-light">
+                <img class="card-img-top" src="/imgs/atari.jpg" alt="Card image cap">
+              <div class="card-body card3">
+                <h5 class="card-title">Atari breakout</h5>
+                <p class="card-text">Go to Atari</p>
+                <a role="button" href="https://www.crazygames.com/game/atari-breakout" target="_blank" class="btn btn-outline-light">PLAY</a>
+              </div>
+            </div>
         </div>
       </div>
 
@@ -108,27 +112,27 @@
     </section> <!-- END_GAME -->
     <section class="container history" style="display: none;">
       <section class="row mt-5">
-        <section class="col-7 history-title">
+        <section class="col-7 col-sm-12 history-title">
 
         </section>
-        <section class="col-5 history-img">
-
-        </section>
-      </section>
-      <section class="row">
-        <section class="col-12 history-gameplay">
+        <section class="col-5 col-sm-12 history-img">
 
         </section>
       </section>
       <section class="row">
-        <section class="col-12 history-ports">
+        <section class="col-sm-12 history-gameplay">
+
+        </section>
+      </section>
+      <section class="row">
+        <section class="col-sm-12 history-ports">
 
         </section>
       </section>
     </section> <!-- END_HISTORY -->
     <section class="container high-score" style="display: none;">
       <section class="row mt-5">
-        <section class="col-12">
+        <section class="col-sm-12">
 
         </section>
       </section>

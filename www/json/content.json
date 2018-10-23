@@ -22,13 +22,15 @@
       "play": "Spela Nu",
       "playstart": "SPELA NU",
       "history": "Historia",
-      "highscore": "Topplista"
+      "highscore": "Topplista",
+      "versions": "Andra Versioner"
     },
     "en": {
       "play": "Play Now",
       "playstart": "PLAY NOW",
       "history": "History",
-      "highscore": "HighScore"
+      "highscore": "HighScore",
+      "versions": "Other Versions"
     }
   },
   "main-button": {
@@ -41,24 +43,24 @@
   },
   "cards": {
     "sv": {
-      "card-headline": "Testa på dessa andra spel från andra webbsidor!",
-      "card1-name": "Sparkanoid",
-      "card1-desc": "Gå till Sparkanoid",
-      "card2-name": "Breakout 5",
-      "card2-desc": "Gå till Breakout 5",
-      "card3-name": "Atari Breakout",
-      "card3-desc": "Gå till Atari Breakout",
-      "card-button": "SPELA"
+      "cardHeadline": "Testa på dessa andra spel från andra webbsidor!",
+      "card1Name": "Sparkanoid",
+      "card1Desc": "Gå till Sparkanoid",
+      "card2Name": "Breakout 5",
+      "card2Desc": "Gå till Breakout 5",
+      "card3Name": "Atari Breakout",
+      "card3Desc": "Gå till Atari Breakout",
+      "cardButton": "SPELA"
     },
     "en": {
-      "card-headline": "Try out these other games from other websites!",
-      "card1-name": "Sparkanoid",
-      "card1": "Go to Sparkanoid",
-      "card2-name": "Breakout 5",
-      "card2": "Go to Breakout 5",
-      "card3-name": "Atari Breakout",
-      "card3": "Go to Atari Breakout",
-      "card-button": "PLAY"
+      "cardHeadline": "Try out these other games from other websites!",
+      "card1Name": "Sparkanoid",
+      "card1Desc": "Go to Sparkanoid",
+      "card2Name": "Breakout 5",
+      "card2Desc": "Go to Breakout 5",
+      "card3Name": "Atari Breakout",
+      "card3Desc": "Go to Atari Breakout",
+      "cardButton": "PLAY"
     }
   },
   "game": {
