@@ -8563,9 +8563,11 @@ body main h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
   .my-cards {
     padding-top: 2rem;
+    max-width: 100%;
+    flex: 100%;
   }
 }
 
