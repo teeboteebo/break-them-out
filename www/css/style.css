@@ -8571,6 +8571,10 @@ body main h2 {
   }
 }
 
+.card-img-top {
+  padding: 1px;
+}
+
 footer {
   background: black;
 }
