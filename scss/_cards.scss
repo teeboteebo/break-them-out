@@ -1,16 +1,13 @@
-
-.bk-opacity{
-  background-color: rgba($color: black, $alpha: .5);
-}
-
 .my-cards{
   @media only screen and (max-width: 1200px) {
   padding-top: 2rem;
   max-width: 100%;
   flex: 100%;
   }
-} 
-
-.card-img-top{
-  padding: 1px;
+  .card-img-top{
+    padding: 1px;
+  }
+}
+.bk-opacity{
+  background-color: rgba($color: black, $alpha: .5);
 }

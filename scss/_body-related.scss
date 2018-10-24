@@ -10,6 +10,9 @@ body {
   .center-me {
     margin: 0 auto;
   }
+  .shadow-me{
+    text-shadow: 1px 1px #000;
+  }
   main {
     flex: 1;
     h2 {
