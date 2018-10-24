@@ -6,10 +6,10 @@ function loadGame() {
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 300;
-  const initialBallSpeed = 350;
+  const initialBallSpeed = 320;
   const paddle = {};
   const ball = {};
-  let gameBorders = $('.game')[0].getBoundingClientRect();
+  let gameBorders = loadGameBorders();
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -31,7 +31,6 @@ function loadGame() {
 
   function updateGame(deltaTime) {
     if (paused) { return; }
-    gameBorders = $('.game')[0].getBoundingClientRect();
 
     movePaddle(deltaTime);
     moveBall(deltaTime);
@@ -42,14 +41,13 @@ function loadGame() {
     const velocity = direction * paddle.speed * deltaTime;
     paddle.left += velocity;
     if (paddle.left < gameBorders.left) { paddle.left = 0; }
-    if (paddle.left + paddle.width > gameBorders.right) { paddle.left = gameBorders.right - paddle.width; }
+    if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
     paddle.$.css('left', paddle.left);
   }
 
   function moveBall(deltaTime) {
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
-    console.log(ball.direction.x * ball.speed * deltaTime);
 
     if (!collisionDetectBallAndGame()) { return; }
     collisionDetectBallAndBricks();
@@ -57,7 +55,6 @@ function loadGame() {
 
     ball.$.css('left', ball.left);
     ball.$.css('top', ball.top);
-    console.log(ball);
   }
 
   function calculatePaddleDirection() {
@@ -78,15 +75,15 @@ function loadGame() {
     if (ball.left < gameBorders.left) {
       ball.left = 0;
       ball.direction.x *= -1;
-    } else if (ball.left + ball.width > gameBorders.right) {
-      ball.left = gameBorders.right - ball.width;
+    } else if (ball.left + ball.width > gameBorders.width) {
+      ball.left = gameBorders.width - ball.width;
       ball.direction.x *= -1;
     }
 
     if (ball.top < gameBorders.top) {
       ball.top = 0;
       ball.direction.y *= -1;
-    } else if (ball.top + ball.height > gameBorders.bottom) {
+    } else if (ball.top + ball.height > gameBorders.height) {
       loseLife();
       return false;
     }
@@ -176,21 +173,17 @@ function loadGame() {
   }
 
   function setupKeyListeners() {
-
     $(window).keydown(function (e) {
-      console.log("keysPressed");
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
     });
 
     $(window).keyup(function (e) {
-      console.log("keyReleased");
       if (e.which === 37) { keysPressed.left = false; }
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
     });
-
     $(".rightBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
 
@@ -209,27 +202,23 @@ function loadGame() {
     });
   }
 
-  $(".rightBtn").on("touchstart mousedown", function () {
-    currentKey = "right";
-  });
-  $(".leftBtn").on("touchstart mousedown", function () {
-    currentKey = "left";
-  });
-  $(".rightBtn").on("touchend mouseup", function () {
-    currentKey = "";
-  });
-  $(".leftBtn").on("touchend mouseup", function () {
-    currentKey = "";
-  });
+  function loadGameBorders(){
+    return {
+      left: 0,
+      top: 0,
+      width: $('.game').width(),
+      height: $('.game').height()
+    };
+  }
 
   function resetPaddle() {
     paddle.$ = $('.paddle');
     paddle.speed = initialPaddleSpeed;
 
-    const r = paddle.$[0].getClientRects()[0];
-    paddle.top = r.top;
-    paddle.width = r.width;
-    paddle.height = r.height;
+    paddle.top = paddle.$.position().top;
+    paddle.left = paddle.$.position().left;
+    paddle.width = paddle.$.width();
+    paddle.height = paddle.$.height();
 
     paddle.$.css('left', (paddle.left = gameBorders.width / 2 - paddle.width / 2));
   }
@@ -241,9 +230,8 @@ function loadGame() {
     ball.$.css('top', (ball.top = 0));
     ball.direction = { x: 1, y: 1 };
 
-    const r = ball.$[0].getClientRects()[0];
-    ball.width = r.width;
-    ball.height = r.height;
+    ball.width = ball.$.width();
+    ball.height = ball.$.height();
   }
 
   function spawnBricks() {

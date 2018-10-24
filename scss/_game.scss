@@ -10,6 +10,7 @@ html {
       background-color: #000;
       color: white;
       height: 100%;
+      padding: 0px;
 
       .score {
         position: absolute;
@@ -41,7 +42,7 @@ html {
       }
 
       .brick {
-        left: 300px;
+        left: 100px;
         top: 200px;
         width: 50px;
         height: 20px;

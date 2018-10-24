@@ -8597,6 +8597,7 @@ html body .game {
   background-color: #000;
   color: white;
   height: 100%;
+  padding: 0px;
 }
 
 html body .game .score {
@@ -8629,7 +8630,7 @@ html body .game .paddle {
 }
 
 html body .game .brick {
-  left: 300px;
+  left: 100px;
   top: 200px;
   width: 50px;
   height: 20px;
