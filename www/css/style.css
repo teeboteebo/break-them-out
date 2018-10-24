@@ -8571,12 +8571,12 @@ body main h2 {
   }
 }
 
-.my-cards .bk-opacity {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 .my-cards .card-img-top {
   padding: 1px;
+}
+
+.bk-opacity {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 footer {
