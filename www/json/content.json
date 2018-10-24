@@ -49,7 +49,7 @@
       "card2Name": "Breakout 5",
       "card2Desc": "Gå till Breakout 5",
       "card3Name": "Atari Breakout",
-      "card3Desc": "Gå till Atari Breakout",
+      "card3Desc": "Gå till Atari",
       "cardButton": "SPELA"
     },
     "en": {
@@ -59,7 +59,7 @@
       "card2Name": "Breakout 5",
       "card2Desc": "Go to Breakout 5",
       "card3Name": "Atari Breakout",
-      "card3Desc": "Go to Atari Breakout",
+      "card3Desc": "Go to Atari",
       "cardButton": "PLAY"
     }
   },
