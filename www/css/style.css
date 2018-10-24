@@ -8563,9 +8563,9 @@ body main h2 {
   right: 0px;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 768px) {
   .my-cards {
-    padding-top: 2rem;
+    padding-bottom: 2rem;
     max-width: 100%;
     flex: 100%;
   }
