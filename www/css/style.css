@@ -8630,7 +8630,7 @@ html body .game .paddle {
 }
 
 html body .game .brick {
-  left: 100px;
+  left: 300px;
   top: 200px;
   width: 50px;
   height: 20px;
