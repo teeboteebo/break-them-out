@@ -191,26 +191,27 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = false; }
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
-      $(".rightBtn").on("touchstart mousedown", function () {
-        console.log("keysPressed");
-  
-        keysPressed.right = true;
-      });
-      $(".leftBtn").on("touchstart mousedown", function () {
-        console.log("keysPressed");
-  
-        keysPressed.left = true;
-      });
-      $(".rightBtn").on("touchend mouseup", function () {
-        keysPressed.right = false;
-      });
-      $(".leftBtn").on("touchend mouseup", function () {
-        keysPressed.left = false;
-      });
+    });
+
+    $(".rightBtn").on("touchstart mousedown", function () {
+      console.log("keysPressed");
+
+      keysPressed.right = true;
+    });
+    $(".leftBtn").on("touchstart mousedown", function () {
+      console.log("keysPressed");
+
+      keysPressed.left = true;
+    });
+    $(".rightBtn").on("touchend mouseup", function () {
+      keysPressed.right = false;
+    });
+    $(".leftBtn").on("touchend mouseup", function () {
+      keysPressed.left = false;
     });
   }
 
-  function loadGameBorders(){
+  function loadGameBorders() {
     return {
       left: 0,
       top: 0,
