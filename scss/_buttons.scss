@@ -4,7 +4,6 @@
   height: 100%;
   left: 0px;
   top: 0px;
-  text-align: center;
   button {
     position: absolute;
     background-color: rgba(255, 255, 255, 0);
@@ -13,6 +12,7 @@
     font-size:50px;
     height: 100%;
     width: 40%;
+    outline: none;
     @media only screen and (min-width:1200px) {
       display: none;
     }
