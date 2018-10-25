@@ -8565,7 +8565,7 @@ body main h2 {
 
 @media only screen and (max-width: 1000px) {
   .my-cards {
-    padding-bottom: 2rem;
+    padding-top: 2rem;
     max-width: 100%;
     flex: 100%;
   }
@@ -8639,7 +8639,7 @@ html body .game .brick {
   z-index: 1;
 }
 
-@media only screen and (max-width: 823px) {
+@media only screen and (max-width: 1000px) {
   html body .game .brick {
     left: 40px;
     width: 30px;
