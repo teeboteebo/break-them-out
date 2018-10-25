@@ -11,6 +11,10 @@ function loadGame() {
   const ball = {};
   let gameBorders = loadGameBorders();
 
+  let levelClear = new sound("/gameSounds/levelCleared.mp3");
+  let ballCollide = new sound("/gameSounds/ballCollide.mp3");
+  let ballMiss = new sound("/gameSounds/loseLife.mp3");
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
@@ -34,6 +38,8 @@ function loadGame() {
     paused = false;
     spawnBricks();
     updateInterface();
+
+    levelClear.play();
   }
 
   function updateGame(deltaTime) {
@@ -76,20 +82,24 @@ function loadGame() {
     paused = true;
     updateInterface();
     resetBall();
+    ballMiss.play();
   }
 
   function collisionDetectBallAndGame() {
     if (ball.left < gameBorders.left) {
       ball.left = 0;
       ball.direction.x *= -1;
+      ballCollide.play();
     } else if (ball.left + ball.width > gameBorders.width) {
       ball.left = gameBorders.width - ball.width;
       ball.direction.x *= -1;
+      ballCollide.play();
     }
 
     if (ball.top < gameBorders.top) {
       ball.top = 0;
       ball.direction.y *= -1;
+      ballCollide.play();
     } else if (ball.top + ball.height > gameBorders.height) {
       loseLife();
       return false;
@@ -103,6 +113,7 @@ function loadGame() {
       ball.top = paddle.top - ball.height;
       score += 5;
       updateInterface();
+      ballCollide.play();
     }
   }
 
@@ -121,6 +132,7 @@ function loadGame() {
         bricks.splice(i, 1);
         score += 20;
         updateInterface();
+        ballCollide.play();
       }
     }
     if (bricks.length == 0) {
@@ -300,5 +312,21 @@ function loadGame() {
         previousTime = now;
       }, updateSpeed);
     }, 1000);
+  }
+
+  // Function for sounds to be able
+  function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
   }
 }
