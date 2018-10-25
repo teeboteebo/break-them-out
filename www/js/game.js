@@ -11,6 +11,12 @@ function loadGame() {
   const ball = {};
   let gameBorders = loadGameBorders();
 
+  // Sounds
+  let soundBeep = new sound("/gameSounds/ballCollide.mp3");
+  let soundLevel = new sound("/gameSounds/levelCleared.mp3");
+  let soundMiss = new sounds("/gameSounds/loseLife.mp3");
+
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
