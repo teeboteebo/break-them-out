@@ -206,7 +206,7 @@ function loadGame() {
     return {
       left: 0,
       top: 0,
-      width: $('.game').outerWidth()-2,
+      width: $('.game').width(),
       height: $('.game').height()
     };
   }
