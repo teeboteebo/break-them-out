@@ -29,6 +29,13 @@ function loadGame() {
     startInterval();
   }
 
+  // Loads in a new set of bricks in allowing you to keep on player upon clearing
+  function startNewRound() {
+    paused = false;
+    spawnBricks();
+    updateInterface();
+  }
+
   function updateGame(deltaTime) {
     if (paused) { return; }
 
@@ -151,6 +158,7 @@ function loadGame() {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
+      startNewRound();
     } else if (paused) {
       $('.main-text').text('PAUSED - press ENTER to continue...');
     } else {
@@ -183,22 +191,6 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = false; }
       if (e.which === 39) { keysPressed.right = false; }
       if (e.which === 13) { keysPressed.enter = false; }
-      $(".rightBtn").on("touchstart mousedown", function () {
-        console.log("keysPressed");
-  
-        keysPressed.right = true;
-      });
-      $(".leftBtn").on("touchstart mousedown", function () {
-        console.log("keysPressed");
-  
-        keysPressed.left = true;
-      });
-      $(".rightBtn").on("touchend mouseup", function () {
-        keysPressed.right = false;
-      });
-      $(".leftBtn").on("touchend mouseup", function () {
-        keysPressed.left = false;
-      });
     });
   }
 
@@ -206,7 +198,7 @@ function loadGame() {
     return {
       left: 0,
       top: 0,
-      width: $('.game').width(),
+      width: $('.game').outerWidth()-2,
       height: $('.game').height()
     };
   }
