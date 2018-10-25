@@ -29,6 +29,13 @@ function loadGame() {
     startInterval();
   }
 
+  // Loads in a new set of bricks in allowing you to keep on player upon clearing
+  function startNewRound() {
+    paused = false;
+    spawnBricks();
+    updateInterface();
+  }
+
   function updateGame(deltaTime) {
     if (paused) { return; }
 
@@ -151,6 +158,7 @@ function loadGame() {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
+      startNewRound();
     } else if (paused) {
       $('.main-text').text('PAUSED - press ENTER to continue...');
     } else {
