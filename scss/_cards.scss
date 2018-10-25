@@ -1,13 +1,13 @@
 .my-cards{
-  @media only screen and (max-width: 768px) {
-  padding-bottom: 2rem;
+  @media only screen and (max-width: 1000px) {
+  padding-top: 2rem;
   max-width: 100%;
   flex: 100%;
   }
   .card-img-top{
     padding: 1px;
   }
-}
+} 
 .bk-opacity{
   background-color: rgba($color: black, $alpha: .5);
 }
