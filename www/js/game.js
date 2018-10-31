@@ -14,6 +14,8 @@ function loadGame() {
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
   let ballMiss = new sound("/gameSounds/loseLife.mp3");
+  let themeSong = new sound("/gameSounds/themeSong.mp3");
+  let gameOver = new sound("/gameSounds/gameOver.mp3");
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -31,6 +33,7 @@ function loadGame() {
 
     updateInterface();
     startInterval();
+    themeSong.play();
   }
 
   // Loads in a new set of bricks in allowing you to keep on player upon clearing
@@ -173,6 +176,7 @@ function loadGame() {
     $('.main-text').hide();
     if (lives < 1) {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      gameOver.play();
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
       startNewRound();
@@ -252,7 +256,7 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    
+
     ball.width = ball.$.width();
     ball.height = ball.$.height();
 
