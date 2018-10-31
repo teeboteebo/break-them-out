@@ -8579,10 +8579,44 @@ body main h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-footer {
-  background: #000;
+/* FOOTER CSS*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
+.footer .footer-inner {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: black;
+}
+
+.footer .footer-inner .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.icons {
+  font-size: 30px;
+  padding: 1rem;
+}
+
+.icons .fab {
+  padding: 1rem;
+  border: solid 3px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icons .fab:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.logo {
+  padding: 1rem;
+}
+
+/* FOOTER ABOVE */
 html {
   height: 100%;
 }
