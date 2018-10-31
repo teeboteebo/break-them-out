@@ -176,6 +176,7 @@ function loadGame() {
     $('.main-text').hide();
     if (lives < 1) {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      themeSong.stop();
       gameOver.play();
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
