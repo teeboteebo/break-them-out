@@ -20,12 +20,14 @@ html {
         position: absolute;
         top: 5px;
         right: 10px;
+        text-shadow: 1px 1px #000;
       }
 
       .lives {
         position: absolute;
         top: 5px;
         left: 10px;
+        text-shadow: 1px 1px #000;
       }
 
       .main-text {
@@ -33,7 +35,8 @@ html {
         position: absolute;
         width: 100%;
         text-align: center;
-        top: 150px;
+        top: 350px;
+        text-shadow: 1px 1px #000;
       }
 
       .paddle {
