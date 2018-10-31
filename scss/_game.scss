@@ -12,7 +12,7 @@ html {
       background-size: cover;
       background-position: bottom right;
       color: white;
-      min-height: 750px;
+      min-height: 90vh;
       padding: 0px;
       width: 500px;
 
@@ -39,7 +39,7 @@ html {
         text-shadow: 1px 1px #000;
         margin: 0 15px;
         max-width: 470px;
-        font-size: 2rem;
+        font-size: 1rem;
       }
 
       .paddle {
@@ -63,13 +63,8 @@ html {
         background-size: 100% 100%;
         position: absolute;
         z-index: 1;
-        @media only screen and (max-width:1000px) {
-          left: 40px;
-          width: 30px;
-          top: 80px;
-        }
       }
-
+      
       .ball {
         position: absolute;
         height: 20px;
@@ -78,6 +73,7 @@ html {
         background: url('/imgs/ball.png');
         background-size: 100% 100%;
         border-radius: 50%;
+        animation: spin .5s linear infinite;
       }
     }
   }
