@@ -175,16 +175,18 @@ function loadGame() {
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
-      $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      $('.main-text').text('GAME OVER - press "ENTER" to play again');
       themeSong.stop();
       gameOver.play();
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
       startNewRound();
     } else if (paused) {
-      $('.main-text').text('PAUSED - press ENTER to continue...');
+      $('.main-text').text('PAUSED - press "ENTER" to continue...');
+      themeSong.stop();
     } else {
       $('.main-text').text('');
+      themeSong.play();
     }
     $('.main-text').fadeIn(500);
   }

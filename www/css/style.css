@@ -8661,6 +8661,9 @@ html body .game .main-text {
   text-align: center;
   top: 350px;
   text-shadow: 1px 1px #000;
+  margin: 0 15px;
+  max-width: 470px;
+  font-size: 2rem;
 }
 
 html body .game .paddle {
