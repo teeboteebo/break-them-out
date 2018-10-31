@@ -259,16 +259,37 @@ function loadGame() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
     const colors = [
-      'rgba(0, 0, 0, 0)',
-      'rgba(0, 0, 0, 0)',
-      'rgba(0, 0, 0, 0)',
-      'rgba(0, 0, 0, 0)',
+      0,0,0,0
     ];
 
     let prevLeft = brickCSS.left;
 
     for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color);
+      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
+    for (let color of colors) {
+      const brick = createBrick(prevLeft - 400, brickCSS.top + 50, brickCSS.width, brickCSS.height);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
+    for (let color of colors) {
+      const brick = createBrick(prevLeft - 800, brickCSS.top + 100, brickCSS.width, brickCSS.height);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
+    for (let color of colors) {
+      const brick = createBrick(prevLeft - 1200, brickCSS.top + 150, brickCSS.width, brickCSS.height);
 
       bricks.push(brick);
       $('.game').append(brick.$);
@@ -277,15 +298,14 @@ function loadGame() {
     }
   }
 
-  function createBrick(left, top, width, height, backgroundColor) {
-    const brick = $('<div class="brick">').css({ backgroundColor, left, top });
+  function createBrick(left, top, width, height) {
+    const brick = $('<div class="brick">').css({ left, top });
     return {
       $: brick,
       left,
       top,
       width,
-      height,
-      backgroundColor
+      height
     };
   }
 
