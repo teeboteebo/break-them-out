@@ -8506,6 +8506,8 @@ body {
   background-image: url("/imgs/8bit-wallpaper.png");
   background-color: #000;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   display: flex;
   min-height: 100vh;
@@ -8579,10 +8581,44 @@ body main h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-footer {
-  background: #000;
+/* FOOTER CSS*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
+.footer .footer-inner {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: black;
+}
+
+.footer .footer-inner .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.icons {
+  font-size: 30px;
+  padding: 1rem;
+}
+
+.icons .fab {
+  padding: 1rem;
+  border: solid 3px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icons .fab:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.logo {
+  padding: 1rem;
+}
+
+/* FOOTER ABOVE */
 html {
   height: 100%;
 }
@@ -8599,7 +8635,7 @@ html body .game {
   background-size: cover;
   background-position: bottom right;
   color: white;
-  height: 100%;
+  min-height: 750px;
   padding: 0px;
   width: 500px;
 }
@@ -8628,6 +8664,8 @@ html body .game .paddle {
   width: 100px;
   height: 20px;
   background-color: #999;
+  background: url("/imgs/paddle.png");
+  background-size: 100% 100%;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -8640,7 +8678,6 @@ html body .game .brick {
   height: 15px;
   background-color: #777;
   background: url("/imgs/brick.png");
-  background-repeat: no-repeat;
   background-size: 100% 100%;
   position: absolute;
   z-index: 1;
