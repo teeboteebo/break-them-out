@@ -8628,6 +8628,8 @@ html body .game .paddle {
   width: 100px;
   height: 20px;
   background-color: #999;
+  background: url("/imgs/paddle.png");
+  background-size: 100% 100%;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -8640,7 +8642,6 @@ html body .game .brick {
   height: 15px;
   background-color: #777;
   background: url("/imgs/brick.png");
-  background-repeat: no-repeat;
   background-size: 100% 100%;
   position: absolute;
   z-index: 1;
