@@ -25,8 +25,8 @@ function loadGame() {
     score = 0;
     paused = false;
 
-    resetBall();
     resetPaddle();
+    resetBall();
     spawnBricks();
 
     updateInterface();
@@ -43,9 +43,14 @@ function loadGame() {
   }
 
   function updateGame(deltaTime) {
-    if (paused) { return; }
-
     movePaddle(deltaTime);
+
+    //This move paddle and ball while paused
+    if (paused) {
+      ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
+      return;
+    }
+
     moveBall(deltaTime);
   }
 
@@ -247,12 +252,14 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
-    ball.direction = { x: 1, y: 1 };
-
+    
     ball.width = ball.$.width();
     ball.height = ball.$.height();
+
+    ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
+    ball.$.css('top', (ball.top = paddle.top - ball.height));
+    ball.direction = { x: 1, y: 1 };
+
   }
 
   function spawnBricks() {
