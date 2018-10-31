@@ -259,11 +259,10 @@ function loadGame() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
     const colors = [
-      'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
+      'rgba(0, 0, 0, 0)',
+      'rgba(0, 0, 0, 0)',
+      'rgba(0, 0, 0, 0)',
+      'rgba(0, 0, 0, 0)',
     ];
 
     let prevLeft = brickCSS.left;
@@ -301,7 +300,7 @@ function loadGame() {
   }
 
   function startInterval() {
-    const updateSpeed = 10; // lower = faster
+    const updateSpeed = 5; // lower = faster
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
     setTimeout(() => {

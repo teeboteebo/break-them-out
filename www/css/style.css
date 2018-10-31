@@ -8595,9 +8595,13 @@ html body {
 html body .game {
   position: relative;
   background-color: #000;
+  background: url("/imgs/stage1.jpg");
+  background-size: cover;
+  background-position: bottom right;
   color: white;
   height: 100%;
   padding: 0px;
+  width: 500px;
 }
 
 html body .game .score {
@@ -8621,8 +8625,8 @@ html body .game .main-text {
 }
 
 html body .game .paddle {
-  width: 200px;
-  height: 30px;
+  width: 100px;
+  height: 20px;
   background-color: #999;
   position: absolute;
   z-index: 1;
@@ -8630,11 +8634,14 @@ html body .game .paddle {
 }
 
 html body .game .brick {
-  left: 300px;
-  top: 200px;
+  left: 75px;
+  top: 100px;
   width: 50px;
-  height: 20px;
+  height: 15px;
   background-color: #777;
+  background: url("/imgs/brick.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: absolute;
   z-index: 1;
 }
@@ -8649,8 +8656,8 @@ html body .game .brick {
 
 html body .game .ball {
   position: absolute;
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 15px;
   background-color: #fff;
   border-radius: 50%;
 }
@@ -8668,11 +8675,6 @@ header nav .swe-btn, header nav .eng-btn {
 .history .history-img img {
   padding-top: 46px;
   width: 100%;
-}
-
-.history p {
-  font-size: 0.7rem;
-  line-height: 1.2rem;
 }
 
 @media (min-width: 992px) {
@@ -8694,11 +8696,13 @@ header nav .swe-btn, header nav .eng-btn {
     font-size: 1rem;
     line-height: 1.9rem;
     margin-bottom: 0;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
   }
 }
 
 @media (min-width: 576px) {
-  .history h3 {
+  .history p h3 {
     margin: 1.2rem 0;
   }
 }
