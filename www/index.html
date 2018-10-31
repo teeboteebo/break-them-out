@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!--Menu centered and collapse-->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <section class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ">
           <li class="nav-item mx-3 play-now">
             <a class="nav-link" href="/game">Play Now<span class="sr-only">(current)</span></a>
@@ -39,18 +39,19 @@
               Other Versions
             </a>
             <!--Put BreakOut links here-->
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <section class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="http://www.spelo.se/arkad/sparkanoid" target="_blank">Sparkanoid</a>
               <a class="dropdown-item" href="http://o.www.spela.se/spel_/breakout_5" target="_blank">Breakout 5</a>
-              <a class="dropdown-item" href="https://www.crazygames.com/game/atari-breakout" target="_blank">Atari Breakout</a>
-            </div>
+              <a class="dropdown-item" href="https://www.crazygames.com/game/atari-breakout" target="_blank">Atari
+                Breakout</a>
+              </section>
           </li>
           <li class="nav-item mx-3 mt-1">
             <img class="flag swe-btn" src="/imgs/flag-swe.png" alt="Choose Swedish">
             <img class="flag eng-btn" src="/imgs/flag-eng.png" alt="Choose English">
           </li>
         </ul>
-      </div>
+      </section>
     </nav>
   </header>
   <main>
@@ -63,91 +64,230 @@
       <section class="row play-now-start">
         <a role="button" href="/game" class="btn btn-outline-light center-me my-5">PLAY NOW</a>
       </section>
-      <div class="col-12  text-center bk-opacity mt-5 py-2 card-headline">
+      <section class="col-12  text-center bk-opacity mt-5 py-2 card-headline">
         <!-- h3 ska bort och läggas in med JSON-->
         <h3 class="shadow-me">Try out these other games from other websites!</h3>
-      </div>
-      <div class="row other-game mt-4">
-        <div class="my-cards col-4">
-            <div class="card text-center bk-opacity border-light">
-                <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
-               <div class="card-body card1">
-                 <h5 class="card-title">Sparknoid</h5>
-                 <p class="card-text">Go to Sparkanoid</p>
-                 <a role="button" href="http://www.spelo.se/arkad/sparkanoid" target="_blank" class="btn btn-outline-light">PLAY</a>
-               </div>
-             </div>
-        </div>
-        <div class="my-cards col-4">
-            <div class="card text-center bk-opacity border-light">
-                <img class="card-img-top" src="/imgs/breakout-5.jpg" alt="Card image cap">
-              <div class="card-body card2">
-                <h5 class="card-title">Breakout 5</h5>
-                <p class="card-text">Go to Breakout 5</p>
-                <a role="button" href="http://o.www.spela.se/spel_/breakout_5" target="_blank" class="btn btn-outline-light">PLAY</a>
-              </div>
-            </div>
-        </div>
-        <div class="my-cards col-4">
-            <div class="card text-center bk-opacity border-light">
-                <img class="card-img-top" src="/imgs/atari.jpg" alt="Card image cap">
-              <div class="card-body card3">
-                <h5 class="card-title">Atari breakout</h5>
-                <p class="card-text">Go to Atari</p>
-                <a role="button" href="https://www.crazygames.com/game/atari-breakout" target="_blank" class="btn btn-outline-light">PLAY</a>
-              </div>
-            </div>
-        </div>
-      </div>
+      </section>
+      <section class="row other-game mt-4">
+        <section class="my-cards col-4">
+          <section class="card text-center bk-opacity border-light">
+            <img class="card-img-top" src="/imgs/Sparkanoid.jpg" alt="Card image cap">
+            <section class="card-body card1">
+              <h5 class="card-title">Sparknoid</h5>
+              <p class="card-text">Go to Sparkanoid</p>
+              <a role="button" href="http://www.spelo.se/arkad/sparkanoid" target="_blank" class="btn btn-outline-light">PLAY</a>
+            </section>
+          </section>
+        </section>
+        <section class="my-cards col-4">
+          <section class="card text-center bk-opacity border-light">
+            <img class="card-img-top" src="/imgs/breakout-5.jpg" alt="Card image cap">
+            <section class="card-body card2">
+              <h5 class="card-title">Breakout 5</h5>
+              <p class="card-text">Go to Breakout 5</p>
+              <a role="button" href="http://o.www.spela.se/spel_/breakout_5" target="_blank" class="btn btn-outline-light">PLAY</a>
+            </section>
+          </section>
+        </section>
+        <section class="my-cards col-4">
+          <section class="card text-center bk-opacity border-light">
+            <img class="card-img-top" src="/imgs/atari.jpg" alt="Card image cap">
+            <section class="card-body card3">
+              <h5 class="card-title">Atari breakout</h5>
+              <p class="card-text">Go to Atari</p>
+              <a role="button" href="https://www.crazygames.com/game/atari-breakout" target="_blank" class="btn btn-outline-light">PLAY</a>
+            </section>
+          </section>
+        </section>
+      </section>
 
     </section> <!-- END_START-PAGE -->
     <section class="container game border border-light" style="display: none;">
-      <div class="score">SCORE: <span>00000</span></div>
-      <div class="lives">LIVES: <span>3</span></div>
-      <div class="ball"></div>
-      <div class="paddle"></div>
-      <div class="main-text"></div>
-      <section class ="btnGroup">
-        <button class="leftBtn"> <- </button>
-        <button class="rightBtn" > -> </button>
+      <section class="score">SCORE: <span>00000</span></section>
+      <section class="lives">LIVES: <span>3</span></section>
+      <section class="ball"></section>
+      <section class="paddle"></section>
+      <section class="main-text"></section>
+      <section class="btnGroup">
+        <button class="leftBtn">
+          <- </button> <button class="rightBtn"> ->
+        </button>
       </section>
     </section> <!-- END_GAME -->
     <article class="container history" style="display: none;">
       <section class="row mt-5">
         <section class="col-12 col-xl-5 order-xl-2 mb-4 history-img">
-
+          <img src="imgs/arcadeflyer.jpg" alt="Arcade flyer for Breakout">
         </section>
         <section class="col-12 col-xl-7 order-xl-1 history-title">
-
+          <h3>BREAKOUT</h3>
+          <p>Breakout is an arcade game developed and published by Atari Inc, released on May 13, 1976. It was
+            conceptualized by Nolan Bushnell and Steve Bristow, influenced by the 1972 Atari arcade game Pong, and
+            built by Steve Wozniak aided by Steve Jobs. Breakout was the basis and inspiration for certain aspects of
+            the Apple II personal computer. The game was ported to the Atari 2600 and was followed by a 1978 sequel,
+            Super Breakout, which four years later became the pack-in game for the Atari 5200 console. Breakout spawned
+            an entire genre of Breakout clones, and the concept found new legs with Taito's 1986 Arkanoid which itself
+            found dozens of imitators.</p>
+          <h3>BREAKOUT</h3>
+          <p>Breakout är ett arkadspel utvecklat och publicerat av Atari Inc som släpptes den 13 maj 1976. Konceptet
+            till spelet gjordes av Nolan Bushnell och Steve Bristow, som var influerade av Ataris arkadspel Pong från
+            1972, och byggdes av Steve Wozniak med hjälp av Steve Jobs. Breakout var grunden och inspirationen för
+            vissa aspekter av Apple II-persondatorn. Spelet portades till Atari 2600 och följdes upp 1978 av Super
+            Breakout, som fyra år senare ingick i Atari 5200-konsolen. Breakout skapade en hel genre av Breakout-kloner
+            och konceptet fick nytt liv med Taitos Arkanoid från 1986 som själv skapade ett dussintal efterapare.</p>
         </section>
       </section>
       <section class="row">
         <section class="col-sm-12 history-gameplay">
-
+          <h3>Gameplay</h3>
+          <p>Breakout begins with eight rows of bricks, with each two rows a different color. The color order from the
+            bottom up is yellow, green, orange and red. Using a single ball, the player must knock down as many bricks
+            as possible by using the walls and/or the paddle below to ricochet the ball against the bricks and
+            eliminate them. If the player's paddle misses the ball's rebound, he or she will lose a turn. The player
+            has three turns to try to clear two screens of bricks. Yellow bricks earn one point each, green bricks earn
+            three points, orange bricks earn five points and the top-level red bricks score seven points each. The
+            paddle shrinks to one-half its size after the ball has broken through the red row and hit the upper wall.
+            Ball speed increases at specific intervals: after four hits, after twelve hits, and after making contact
+            with the orange and red rows.</p>
+          <h3>Spelet</h3>
+          <p>Breakout börjar med åtta rader av tegelstenar där varannan rad följs av en ny färg. Färgordningen från
+            botten och upp är gul, grön, orange och röd. Med en enda boll måste spelaren slå ner så många tegelstenar
+            som möjligt genom att använda väggarna och/eller plattan nedan för att studsa tillbaka mot tegelstenarna
+            och eliminera dem. Om spelaren inte lyckas studsa tillbaka bollen kommer hen att förlora ett liv. Spelaren
+            har tre liv på sig att försöka rensa skärmen från två omgångar av tegelstenar. Gula tegelstenar ger en
+            poäng vardera, gröna tegelstenar ger tre poäng vardera, orange ger fem poäng och de röda tegelstenarna
+            längst upp ger sju poäng vardera. Plattan krymper till hälften av storleken efter att bollen har brutit
+            igenom den röda raden och träffat taket. Bollhastigheten ökar med specifika intervaller: efter fyra
+            träffar, efter tolv träffar och efter att träffat orange och röd rad.</p>
         </section>
       </section>
       <section class="row">
         <section class="col-sm-12 history-ports">
-
+          <h3>Ports</h3>
+          <p>The original arcade version of Breakout was ported to the Atari 2600 by Brad Stewart. Brad Stewart and Ian
+            Shepherd were both available to program Breakout for the 2600 and competed in the original version of
+            Breakout for the programming rights; Brad won.</p>
+          <h3>Ports</h3>
+          <p>Den ursprungliga arkadversionen av Breakout var portad till Atari 2600 av Brad Stewart. Brad Stewart och
+            Ian Shepherd var båda tillgängliga för att programmera Breakout för 2600 och tävlade i originalversionen av
+            Breakout om programmeringsrättigheterna, Brad vann.</p>
         </section>
       </section>
-    </article> <!-- END_HISTORY -->
-    <section class="container high-score" style="display: none;">
-      <section class="row mt-5">
-        <section class="col-sm-12">
+    </article>
+    <!-- END_HISTORY -->
 
+    <!-- Highscore -->
+    <section class="container high-score">
+      <section class="row mt-5">
+        <h2 class="col-12 text-center mt-5">
+          Highscore
+        </h2>
+      </section>
+      <section class="row mt-5 justify-content-center">
+        <section class="col-12 col-lg-6">
+          <table class="table bk-opacity">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>JED</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>KEN</td>
+                <td>999</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>FYI</td>
+                <td>888</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>SWE</td>
+                <td>777</td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>J.E</td>
+                <td>666</td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>BAN</td>
+                <td>555</td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>POP</td>
+                <td>444</td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>KIM</td>
+                <td>334</td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>UNO</td>
+                <td>333</td>
+              </tr>
+              <tr>
+                <th scope="row">10</th>
+                <td>UZI</td>
+                <td>222</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </section>
     </section> <!-- END_HIGHSCORE -->
   </main>
 
-  <footer class="container-fluid">
-    <section class="row">
-      <p class="col-12 text-center mt-5 mb-4">
-        &copy; Grupp 3
-      </p>
+   <!-- Footer-->
+   <footer class="footer mt-4">
+    <!-- Footer info -->
+    <section class="footer-inner">
+      <div class="row">
+        <div class="col-md-12 icons text-center">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-twitter"></i>
+        </div>
+      </div>
+      <section class="contact-info">
+        <div class="row">
+          <div class="col-md-12 logo text-center">
+              <div class="footer-info">
+                  <div itemprop="adress">
+                    <span itemprop="StreetAdress">AMIRALSGATAN 17,</span>
+                    <span itemprop="Postalcode"> 211 10</span>
+                    <span itemprop="Adresslocality">MALMÖ, Sweden</span>
+                  </div>
+                  <div itemprop="Mail">
+                    <span itemprop="Email">MAIL@GRUPP3.SE</span>
+                  </div>                  
+                  <div itemprop="Phone">
+                    <span itemprop="Telephone">070-238911</span>
+                  </div>
+              </div>
+               <!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2018 Copyright: Grupp 3
+  </div>
+          </div>
+        </div>
+      </section>
     </section>
   </footer>
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
