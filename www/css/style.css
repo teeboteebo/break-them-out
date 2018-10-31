@@ -8506,6 +8506,8 @@ body {
   background-image: url("/imgs/8bit-wallpaper.png");
   background-color: #000;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   display: flex;
   min-height: 100vh;
@@ -8633,7 +8635,7 @@ html body .game {
   background-size: cover;
   background-position: bottom right;
   color: white;
-  height: 100%;
+  min-height: 750px;
   padding: 0px;
   width: 500px;
 }
