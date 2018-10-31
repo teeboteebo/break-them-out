@@ -8656,9 +8656,11 @@ html body .game .brick {
 
 html body .game .ball {
   position: absolute;
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   background-color: #fff;
+  background: url("/imgs/ball.png");
+  background-size: 100% 100%;
   border-radius: 50%;
 }
 
