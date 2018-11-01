@@ -45,15 +45,12 @@ function loadGame() {
     levelClear.play();
   }
 
+  //This stops movement of paddle and ball while paused
   function updateGame(deltaTime) {
-    movePaddle(deltaTime);
-
-    //This move paddle and ball while paused
     if (paused) {
-      ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
-      return;
+      return
     }
-
+    movePaddle(deltaTime);
     moveBall(deltaTime);
   }
 
@@ -188,6 +185,7 @@ function loadGame() {
     $('.main-text').fadeIn(500);
   }
 
+  //Try to change on spacebar
   function onEnterPress() {
     if (keysPressed.enter) { return; }
     keysPressed.enter = true;
@@ -206,6 +204,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
+      if (e.which === 32) { onSpaceBarPress() }
     });
 
     $(window).keyup(function (e) {
@@ -270,7 +269,7 @@ function loadGame() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
     const colors = [
-      0,0,0,0
+      0, 0, 0, 0
     ];
 
     let prevLeft = brickCSS.left;
@@ -352,11 +351,11 @@ function loadGame() {
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
+    this.play = function () {
+      this.sound.play();
     }
-    this.stop = function(){
-        this.sound.pause();
+    this.stop = function () {
+      this.sound.pause();
     }
   }
 }
