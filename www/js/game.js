@@ -46,14 +46,13 @@ function loadGame() {
   }
 
   function updateGame(deltaTime) {
-    movePaddle(deltaTime);
 
     //This move paddle and ball while paused
     if (paused) {
       ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
       return;
     }
-
+    movePaddle(deltaTime);
     moveBall(deltaTime);
   }
 
@@ -117,7 +116,16 @@ function loadGame() {
 
   function collisionDetectBallAndPaddle() {
     if (!isRectAOutsideRectB(ball, paddle)) {
+      // this if statement changes the direction the ball goes on the x axis (left and right)
+      // when the ball hits the paddle
+      if (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) ){
+      ball.direction.x = -1;
+      }
+      else {
+      ball.direction.x = 1;
+      }
       ball.direction.y *= -1;
+      // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
       score += 5;
       updateInterface();

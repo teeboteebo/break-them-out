@@ -8651,7 +8651,15 @@ html body {
 
 html body .instructions {
   background-color: rgba(0, 0, 0, 0.5);
-  position: relative;
+}
+
+@media only screen and (max-width: 1000px) {
+  html body .instructions {
+    margin-top: 0px !important;
+  }
+  html body .instructions .instructionsHolder {
+    display: none;
+  }
 }
 
 html body .game {
@@ -8661,7 +8669,7 @@ html body .game {
   background-size: cover;
   background-position: bottom right;
   color: white;
-  min-height: 90vh;
+  min-height: 80vh;
   padding: 0px;
   width: 500px;
   -webkit-touch-callout: none;
