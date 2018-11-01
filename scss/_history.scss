@@ -7,6 +7,8 @@
     }
   }
   p {
+    font-family: "FreePixel";
+    font-size: 20px!important;
     @include media-breakpoint-up(lg) {
       font-size: 1rem;
       line-height: 1.8rem;
