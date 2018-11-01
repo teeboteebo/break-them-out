@@ -8554,7 +8554,7 @@ body .third-place {
 }
 
 @font-face {
-  font-family: FreePixel;
+  font-family: "FreePixel";
   src: url(/fonts/FreePixel.ttf);
 }
 
@@ -8667,6 +8667,11 @@ html body .instructions {
   }
 }
 
+html body .sound-btn {
+  position: absolute;
+  z-index: 100;
+}
+
 html body .game {
   position: relative;
   background-color: #000;
@@ -8676,13 +8681,13 @@ html body .game {
   color: white;
   min-height: 80vh;
   padding: 0px;
+  width: 500px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 500px;
 }
 
 html body .game .score {
@@ -8758,6 +8763,11 @@ header nav .swe-btn, header nav .eng-btn {
 .history .history-img img {
   padding-top: 46px;
   width: 100%;
+}
+
+.history p {
+  font-family: "FreePixel";
+  font-size: 20px !important;
 }
 
 @media (min-width: 992px) {
