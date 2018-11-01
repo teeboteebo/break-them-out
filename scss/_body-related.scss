@@ -2,6 +2,8 @@ body {
   background-image: url("/imgs/8bit-wallpaper.png");
   background-color: #000;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   display: flex;
   min-height: 100vh;
@@ -20,5 +22,14 @@ body {
       font-size: 2.5rem;
     }
 
+  }
+  .first-place {
+    color:gold;
+  }
+  .second-place {
+    color: silver;
+  }
+  .third-place {
+    color: rgb(235, 127, 4)
   }
 }

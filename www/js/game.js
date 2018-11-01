@@ -14,6 +14,8 @@ function loadGame() {
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
   let ballMiss = new sound("/gameSounds/loseLife.mp3");
+  let themeSong = new sound("/gameSounds/themeSong.mp3");
+  let gameOver = new sound("/gameSounds/gameOver.mp3");
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -25,12 +27,13 @@ function loadGame() {
     score = 0;
     paused = false;
 
-    resetBall();
     resetPaddle();
+    resetBall();
     spawnBricks();
 
     updateInterface();
     startInterval();
+    themeSong.play();
   }
 
   // Loads in a new set of bricks in allowing you to keep on player upon clearing
@@ -43,9 +46,14 @@ function loadGame() {
   }
 
   function updateGame(deltaTime) {
-    if (paused) { return; }
-
     movePaddle(deltaTime);
+
+    //This move paddle and ball while paused
+    if (paused) {
+      ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
+      return;
+    }
+
     moveBall(deltaTime);
   }
 
@@ -167,14 +175,18 @@ function loadGame() {
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
-      $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      $('.main-text').text('GAME OVER - press "ENTER" to play again');
+      themeSong.stop();
+      gameOver.play();
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
       startNewRound();
     } else if (paused) {
-      $('.main-text').text('PAUSED - press ENTER to continue...');
+      $('.main-text').text('PAUSED - press "ENTER" to continue...');
+      themeSong.stop();
     } else {
       $('.main-text').text('');
+      themeSong.play();
     }
     $('.main-text').fadeIn(500);
   }
@@ -247,29 +259,51 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
-    ball.direction = { x: 1, y: 1 };
 
     ball.width = ball.$.width();
     ball.height = ball.$.height();
+
+    ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
+    ball.$.css('top', (ball.top = paddle.top - ball.height));
+    ball.direction = { x: 1, y: 1 };
+
   }
 
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
     const colors = [
-      'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
+      0,0,0,0
     ];
 
     let prevLeft = brickCSS.left;
 
     for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color);
+      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
+    for (let color of colors) {
+      const brick = createBrick(prevLeft - 400, brickCSS.top + 50, brickCSS.width, brickCSS.height);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
+    for (let color of colors) {
+      const brick = createBrick(prevLeft - 800, brickCSS.top + 100, brickCSS.width, brickCSS.height);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
+    for (let color of colors) {
+      const brick = createBrick(prevLeft - 1200, brickCSS.top + 150, brickCSS.width, brickCSS.height);
 
       bricks.push(brick);
       $('.game').append(brick.$);
@@ -278,15 +312,14 @@ function loadGame() {
     }
   }
 
-  function createBrick(left, top, width, height, backgroundColor) {
-    const brick = $('<div class="brick">').css({ backgroundColor, left, top });
+  function createBrick(left, top, width, height) {
+    const brick = $('<div class="brick">').css({ left, top });
     return {
       $: brick,
       left,
       top,
       width,
-      height,
-      backgroundColor
+      height
     };
   }
 
@@ -301,7 +334,7 @@ function loadGame() {
   }
 
   function startInterval() {
-    const updateSpeed = 10; // lower = faster
+    const updateSpeed = 5; // lower = faster
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
     setTimeout(() => {

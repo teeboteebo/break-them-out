@@ -8502,10 +8502,21 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 body {
   background-image: url("/imgs/8bit-wallpaper.png");
   background-color: #000;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
   display: flex;
   min-height: 100vh;
@@ -8528,6 +8539,18 @@ body main {
 body main h2 {
   text-decoration: underline;
   font-size: 2.5rem;
+}
+
+body .first-place {
+  color: gold;
+}
+
+body .second-place {
+  color: silver;
+}
+
+body .third-place {
+  color: #eb7f04;
 }
 
 .btnGroup {
@@ -8579,10 +8602,44 @@ body main h2 {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-footer {
-  background: #000;
+/* FOOTER CSS*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
+.footer .footer-inner {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: black;
+}
+
+.footer .footer-inner .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.icons {
+  font-size: 30px;
+  padding: 1rem;
+}
+
+.icons .fab {
+  padding: 1rem;
+  border: solid 3px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icons .fab:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.logo {
+  padding: 1rem;
+}
+
+/* FOOTER ABOVE */
 html {
   height: 100%;
 }
@@ -8600,9 +8657,13 @@ html body .instructions {
 html body .game {
   position: relative;
   background-color: #000;
+  background: url("/imgs/stage1.jpg");
+  background-size: cover;
+  background-position: bottom right;
   color: white;
-  height: 80vh;
+  min-height: 90vh;
   padding: 0px;
+  width: 500px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -8615,12 +8676,14 @@ html body .game .score {
   position: absolute;
   top: 5px;
   right: 10px;
+  text-shadow: 1px 1px #000;
 }
 
 html body .game .lives {
   position: absolute;
   top: 5px;
   left: 10px;
+  text-shadow: 1px 1px #000;
 }
 
 html body .game .main-text {
@@ -8628,42 +8691,45 @@ html body .game .main-text {
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 150px;
+  top: 350px;
+  text-shadow: 1px 1px #000;
+  margin: 0 15px;
+  max-width: 470px;
+  font-size: 1rem;
 }
 
 html body .game .paddle {
-  width: 200px;
-  height: 30px;
+  width: 100px;
+  height: 20px;
   background-color: #999;
+  background: url("/imgs/paddle.png");
+  background-size: 100% 100%;
   position: absolute;
   z-index: 1;
   bottom: 0;
 }
 
 html body .game .brick {
-  left: 300px;
-  top: 200px;
+  left: 75px;
+  top: 100px;
   width: 50px;
-  height: 20px;
+  height: 15px;
   background-color: #777;
+  background: url("/imgs/brick.png");
+  background-size: 100% 100%;
   position: absolute;
   z-index: 1;
 }
 
-@media only screen and (max-width: 1000px) {
-  html body .game .brick {
-    left: 40px;
-    width: 30px;
-    top: 80px;
-  }
-}
-
 html body .game .ball {
   position: absolute;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   background-color: #fff;
+  background: url("/imgs/ball.png");
+  background-size: 100% 100%;
   border-radius: 50%;
+  animation: spin .5s linear infinite;
 }
 
 header nav .swe-btn, header nav .eng-btn {

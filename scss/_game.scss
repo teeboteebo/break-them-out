@@ -15,8 +15,11 @@ html {
     .game {
       position: relative;
       background-color: #000;
+      background: url('/imgs/stage1.jpg');
+      background-size: cover;
+      background-position: bottom right;
       color: white;
-      height: 80vh;
+      min-height: 90vh;
       padding: 0px;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -24,17 +27,20 @@ html {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; 
-      
+      width: 500px;
+
       .score {
         position: absolute;
         top: 5px;
         right: 10px;
+        text-shadow: 1px 1px #000;
       }
 
       .lives {
         position: absolute;
         top: 5px;
         left: 10px;
+        text-shadow: 1px 1px #000;
       }
 
       .main-text {
@@ -42,39 +48,45 @@ html {
         position: absolute;
         width: 100%;
         text-align: center;
-        top: 150px;
+        top: 350px;
+        text-shadow: 1px 1px #000;
+        margin: 0 15px;
+        max-width: 470px;
+        font-size: 1rem;
       }
 
       .paddle {
-        width: 200px;
-        height: 30px;
+        width: 100px;
+        height: 20px;
         background-color: #999;
+        background: url('/imgs/paddle.png');
+        background-size: 100% 100%;
         position: absolute;
         z-index: 1;
         bottom: 0;
       }
 
       .brick {
-        left: 300px;
-        top: 200px;
+        left: 75px;
+        top: 100px;
         width: 50px;
-        height: 20px;
+        height: 15px;
         background-color: #777;
+        background: url('/imgs/brick.png');
+        background-size: 100% 100%;
         position: absolute;
         z-index: 1;
-        @media only screen and (max-width:1000px) {
-          left: 40px;
-          width: 30px;
-          top: 80px;
-        }
       }
-
+      
       .ball {
         position: absolute;
-        height: 30px;
-        width: 30px;
+        height: 20px;
+        width: 20px;
         background-color: #fff;
+        background: url('/imgs/ball.png');
+        background-size: 100% 100%;
         border-radius: 50%;
+        animation: spin .5s linear infinite;
       }
     }
   }
