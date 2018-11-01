@@ -8553,6 +8553,11 @@ body .third-place {
   color: #f58b13;
 }
 
+@font-face {
+  font-family: FreePixel;
+  src: url(/fonts/FreePixel.ttf);
+}
+
 .btnGroup {
   position: absolute;
   width: 100%;
@@ -8676,13 +8681,13 @@ html body .game {
   color: white;
   min-height: 80vh;
   padding: 0px;
-  width: 500px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  width: 500px;
 }
 
 html body .game .score {

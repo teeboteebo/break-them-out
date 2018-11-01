@@ -15,10 +15,31 @@ html {
       }
     }
 
+    .soundOff, .pause-text{
+      text-shadow: 1px 1px #000;
+    }
+
+    .pause-game {
+      color: white;
+      position: absolute;
+      top: 34px;
+      right: 5px;
+      z-index:100;
+      border: none;
+      outline: none;
+      background-color: transparent;
+    }
 
     .sound-btn {
+      color: white;
       position: absolute;
+      top: 34px;
+      left: 5px;
       z-index:100;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      
     }
 
     .game {
