@@ -8551,7 +8551,7 @@ body main h2 {
 }
 
 @font-face {
-  font-family: FreePixel;
+  font-family: "FreePixel";
   src: url(/fonts/FreePixel.ttf);
 }
 
@@ -8775,12 +8775,18 @@ header nav .swe-btn, header nav .eng-btn {
 }
 
 .history {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .history .history-img img {
   padding-top: 46px;
   width: 100%;
+}
+
+.history p {
+  font-family: "FreePixel";
+  font-size: 24px !important;
+  line-height: 1.8rem !important;
 }
 
 @media (min-width: 992px) {
@@ -8805,6 +8811,10 @@ header nav .swe-btn, header nav .eng-btn {
     font-size: 0.7rem;
     line-height: 1.2rem;
   }
+}
+
+.history p h3 {
+  margin-top: 1rem;
 }
 
 @media (min-width: 576px) {
