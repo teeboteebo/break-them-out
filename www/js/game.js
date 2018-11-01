@@ -17,6 +17,18 @@ function loadGame() {
   let themeSong = new sound("/gameSounds/themeSong.mp3");
   let gameOver = new sound("/gameSounds/gameOver.mp3");
 
+
+
+  // remove previous event listener
+  // (since this code might be run multiple times)
+  $('.sound-btn').unbind('click');
+
+  let soundMuted = false;
+  $(".sound-btn").click(function (){
+    soundMuted = !soundMuted;
+    $('audio').prop('muted', soundMuted);
+  });
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
@@ -203,6 +215,12 @@ function loadGame() {
   }
 
   function setupKeyListeners() {
+
+    // remove previous event listeners
+    // (since this code might be run multiple times)
+    $(window).unbind('keydown');
+    $(window).unbind('keyup');
+
     $(window).keydown(function (e) {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }

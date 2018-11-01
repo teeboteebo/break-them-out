@@ -12,6 +12,12 @@ html {
 
     }
 
+
+    .sound-btn {
+      position: absolute;
+      z-index:100;
+    }
+
     .game {
       position: relative;
       background-color: #000;
