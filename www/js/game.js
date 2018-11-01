@@ -10,6 +10,7 @@ function loadGame() {
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
+  let aiming = true; 
 
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
@@ -58,14 +59,17 @@ function loadGame() {
     const direction = calculatePaddleDirection();
     const velocity = direction * paddle.speed * deltaTime;
     paddle.left += velocity;
+    if(aiming){ resetBall(); moveBall();  }
     if (paddle.left < gameBorders.left) { paddle.left = 0; }
     if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
     paddle.$.css('left', paddle.left);
   }
 
   function moveBall(deltaTime) {
-    ball.left += ball.direction.x * ball.speed * deltaTime;
-    ball.top += ball.direction.y * ball.speed * deltaTime;
+    if(!aiming){
+      ball.left += ball.direction.x * ball.speed * deltaTime;
+      ball.top += ball.direction.y * ball.speed * deltaTime;
+    }
 
     if (!collisionDetectBallAndGame()) { return; }
     collisionDetectBallAndBricks();
@@ -84,7 +88,7 @@ function loadGame() {
 
   function loseLife() {
     --lives;
-    paused = true;
+    aiming = true;
     updateInterface();
     resetBall();
     ballMiss.play();
@@ -128,7 +132,7 @@ function loadGame() {
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
-      score += 5;
+      if(!aiming){ score += 5; }
       updateInterface();
       ballCollide.play();
     }
@@ -219,7 +223,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { onSpaceBarPress() }
+      if (e.which === 32) { aiming = false; }
     });
 
     $(window).keyup(function (e) {
