@@ -134,6 +134,9 @@ function loadGame() {
       else {
       ball.direction.x = 1;
       }
+      if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
+        ball.direction.x = 0
+      } 
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
@@ -290,8 +293,8 @@ function loadGame() {
     ball.height = ball.$.height();
 
     ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
-    ball.$.css('top', (ball.top = paddle.top - ball.height));
-    ball.direction = { x: 1, y: 1 };
+    ball.$.css('top', (ball.top = paddle.top - ball.height ));
+    ball.direction = { x: 0, y: -1 };
 
   }
 

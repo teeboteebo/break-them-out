@@ -8550,7 +8550,7 @@ body .second-place {
 }
 
 body .third-place {
-  color: #eb7f04;
+  color: #f58b13;
 }
 
 .btnGroup {
@@ -8660,6 +8660,11 @@ html body .instructions {
   html body .instructions .instructionsHolder {
     display: none;
   }
+}
+
+html body .sound-btn {
+  position: absolute;
+  z-index: 100;
 }
 
 html body .game {
