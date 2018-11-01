@@ -8667,9 +8667,30 @@ html body .instructions {
   }
 }
 
-html body .sound-btn {
+html body .soundOff, html body .pause-text {
+  text-shadow: 1px 1px #000;
+}
+
+html body .pause-game {
+  color: white;
   position: absolute;
+  top: 34px;
+  right: 5px;
   z-index: 100;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+html body .sound-btn {
+  color: white;
+  position: absolute;
+  top: 34px;
+  left: 5px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 html body .game {
@@ -8757,7 +8778,7 @@ header nav .swe-btn, header nav .eng-btn {
 }
 
 .history {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .history .history-img img {
@@ -8792,6 +8813,10 @@ header nav .swe-btn, header nav .eng-btn {
     font-size: 0.7rem;
     line-height: 1.2rem;
   }
+}
+
+.history p h3 {
+  margin-top: 1rem;
 }
 
 @media (min-width: 576px) {
