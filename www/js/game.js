@@ -126,9 +126,10 @@ function loadGame() {
       else {
       ball.direction.x = 1;
       }
-      if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
-        ball.direction.x = 0
-      } 
+      // paddle center hitbox
+      // if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
+      //   ball.direction.x = 0
+      // } 
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;

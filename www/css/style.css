@@ -8554,7 +8554,7 @@ body .third-place {
 }
 
 @font-face {
-  font-family: FreePixel;
+  font-family: "FreePixel";
   src: url(/fonts/FreePixel.ttf);
 }
 
@@ -8667,9 +8667,30 @@ html body .instructions {
   }
 }
 
-html body .sound-btn {
+html body .soundOff, html body .pause-text {
+  text-shadow: 1px 1px #000;
+}
+
+html body .pause-game {
+  color: white;
   position: absolute;
+  top: 34px;
+  right: 5px;
   z-index: 100;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+html body .sound-btn {
+  color: white;
+  position: absolute;
+  top: 34px;
+  left: 5px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 html body .game {
@@ -8681,13 +8702,13 @@ html body .game {
   color: white;
   min-height: 80vh;
   padding: 0px;
+  width: 500px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 500px;
 }
 
 html body .game .score {
@@ -8757,12 +8778,18 @@ header nav .swe-btn, header nav .eng-btn {
 }
 
 .history {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .history .history-img img {
   padding-top: 46px;
   width: 100%;
+}
+
+.history p {
+  font-family: "FreePixel";
+  font-size: 24px !important;
+  line-height: 1.8rem !important;
 }
 
 @media (min-width: 992px) {
@@ -8787,6 +8814,10 @@ header nav .swe-btn, header nav .eng-btn {
     font-size: 0.7rem;
     line-height: 1.2rem;
   }
+}
+
+.history p h3 {
+  margin-top: 1rem;
 }
 
 @media (min-width: 576px) {

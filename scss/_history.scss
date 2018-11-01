@@ -1,5 +1,5 @@
 .history {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   .history-img {
     img {
       padding-top: 46px;
@@ -7,6 +7,10 @@
     }
   }
   p {
+    font-family: "FreePixel";
+    font-size: 24px!important;
+    line-height: 1.8rem!important;
+
     @include media-breakpoint-up(lg) {
       font-size: 1rem;
       line-height: 1.8rem;
@@ -27,6 +31,7 @@
       }
     }
     h3 {
+      margin-top: 1rem;
       @include media-breakpoint-up(sm) {
         margin: 1.2rem 0;
       }
