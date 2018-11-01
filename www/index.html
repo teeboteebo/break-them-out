@@ -44,7 +44,7 @@
               <a class="dropdown-item" href="http://o.www.spela.se/spel_/breakout_5" target="_blank">Breakout 5</a>
               <a class="dropdown-item" href="https://www.crazygames.com/game/atari-breakout" target="_blank">Atari
                 Breakout</a>
-              </section>
+            </section>
           </li>
           <li class="nav-item mx-3 mt-1">
             <img class="flag swe-btn" src="/imgs/flag-swe.png" alt="Choose Swedish">
@@ -109,11 +109,19 @@
       <section class="paddle"></section>
       <section class="main-text"></section>
       <section class="btnGroup">
-        <button class="leftBtn">
-          <- </button> <button class="rightBtn"> ->
-        </button>
+        <button class="leftBtn"><- </button> 
+        <button class="rightBtn"> -></button>
       </section>
-    </section> <!-- END_GAME -->
+    </section> 
+    <!-- Game control instructions-->
+    <section class="card instructions container mt-4 mb-4" style="display: none;">
+      <section class="col-12 text-center">
+        <img class="controls-img leftimg" src="/imgs/left_img.png" alt="left button image"> Move left
+        <img class="controls-img rightimg" src="/imgs/right_img.png" alt="right button image"> Move right
+        <img class="controls-img enterimg" src="/imgs/enter_img.png" alt="enter button image"> Pause/Start
+      </section>
+    </section>
+    <!-- END_GAME -->
     <article class="container history" style="display: none;">
       <section class="row mt-5">
         <section class="col-12 col-xl-5 order-xl-2 mb-4 history-img">

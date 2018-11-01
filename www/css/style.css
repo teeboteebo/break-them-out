@@ -8592,12 +8592,23 @@ html body {
   height: 100%;
 }
 
+html body .instructions {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
 html body .game {
   position: relative;
   background-color: #000;
   color: white;
-  height: 100%;
+  height: 80vh;
   padding: 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 html body .game .score {
@@ -8670,11 +8681,6 @@ header nav .swe-btn, header nav .eng-btn {
   width: 100%;
 }
 
-.history p {
-  font-size: 0.7rem;
-  line-height: 1.2rem;
-}
-
 @media (min-width: 992px) {
   .history p {
     font-size: 1rem;
@@ -8694,11 +8700,13 @@ header nav .swe-btn, header nav .eng-btn {
     font-size: 1rem;
     line-height: 1.9rem;
     margin-bottom: 0;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
   }
 }
 
 @media (min-width: 576px) {
-  .history h3 {
+  .history p h3 {
     margin: 1.2rem 0;
   }
 }
