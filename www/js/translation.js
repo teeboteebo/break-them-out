@@ -12,8 +12,8 @@ function createHistory(lang) {
 
   title.html("<h3>" + a.title + "</h3>" + a.desc);
   titleImg.html('<img src="imgs/arcadeflyer.jpg">');
-  game.html("<h3>" + a.gametitle + "</h3>" + a.gameplay + "<h3>" + a.portstitle + "</h3>");
-  ports.html(a.ports);
+  game.html("<h3>" + a.gametitle + "</h3>" + a.gameplay);
+  ports.html("<h3>" + a.portstitle + "</h3>" + a.ports);
 }
 
 function createNavbar(lang){
