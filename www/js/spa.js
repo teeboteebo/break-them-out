@@ -26,6 +26,7 @@ function frontendRouter(path){
     '/game': () => {
       $('body main > *').hide();
       $('.game').show();
+      $('.instructions').show();
       loadGame();
     },
     '/history': () => { $('body main > *').hide(); $('.history').show(); },
