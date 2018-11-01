@@ -39,7 +39,7 @@ html {
       border: none;
       outline: none;
       background-color: transparent;
-      
+
     }
 
     .game {
@@ -49,7 +49,7 @@ html {
       background-size: cover;
       background-position: bottom right;
       color: white;
-      min-height: 80vh;
+      min-height: 90vh;
       padding: 0px;
       width: 500px;
       // makes the text and buttons in the game unseletable, maybe change this to be done in JS/Jquery so it takes fewer lines
@@ -58,7 +58,7 @@ html {
       -khtml-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
-      user-select: none; 
+      user-select: none;
 
       .score {
         position: absolute;
@@ -108,7 +108,7 @@ html {
         position: absolute;
         z-index: 1;
       }
-      
+
       .ball {
         position: absolute;
         height: 20px;

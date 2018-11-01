@@ -8511,6 +8511,15 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+
 body {
   background-image: url("/imgs/8bit-wallpaper.png");
   background-color: #000;
@@ -8539,18 +8548,6 @@ body main {
 body main h2 {
   text-decoration: underline;
   font-size: 2.5rem;
-}
-
-body .first-place {
-  color: gold;
-}
-
-body .second-place {
-  color: silver;
-}
-
-body .third-place {
-  color: #f58b13;
 }
 
 @font-face {
@@ -8667,9 +8664,30 @@ html body .instructions {
   }
 }
 
-html body .sound-btn {
+html body .soundOff, html body .pause-text {
+  text-shadow: 1px 1px #000;
+}
+
+html body .pause-game {
+  color: white;
   position: absolute;
+  top: 34px;
+  right: 5px;
   z-index: 100;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+html body .sound-btn {
+  color: white;
+  position: absolute;
+  top: 34px;
+  left: 5px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }
 
 html body .game {
@@ -8679,15 +8697,15 @@ html body .game {
   background-size: cover;
   background-position: bottom right;
   color: white;
-  min-height: 80vh;
+  min-height: 90vh;
   padding: 0px;
+  width: 500px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 500px;
 }
 
 html body .game .score {
@@ -8793,4 +8811,18 @@ header nav .swe-btn, header nav .eng-btn {
   .history p h3 {
     margin: 1.2rem 0;
   }
+}
+
+.high-score .first-place {
+  color: lightyellow;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  font-weight: bold;
+}
+
+.high-score .second-place {
+  color: silver;
+}
+
+.high-score .third-place {
+  color: #cd7f32;
 }
