@@ -8653,6 +8653,7 @@ html body {
 
 html body .instructions {
   background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -8662,6 +8663,10 @@ html body .instructions {
   html body .instructions .instructionsHolder {
     display: none;
   }
+}
+
+html body .instructions .enterimg {
+  height: 70px;
 }
 
 html body .soundOff, html body .pause-text {
