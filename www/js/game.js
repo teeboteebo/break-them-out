@@ -257,7 +257,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { aiming = false; }
+      if (e.which === 32) { aiming = false; e.preventDefault();}
     });
 
     $(window).keyup(function (e) {
