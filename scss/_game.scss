@@ -24,10 +24,11 @@ html {
     }
 
     .pause-game {
+      font-size: 30px;
       color: white;
       position: absolute;
-      top: 34px;
-      right: 5px;
+      top: 40px;
+      right: 10px;
       z-index:100;
       border: none;
       outline: none;
@@ -35,10 +36,11 @@ html {
     }
 
     .sound-btn {
+      font-size: 40px;
       color: white;
       position: absolute;
-      top: 34px;
-      left: 5px;
+      top: 30px;
+      left: 10px;
       z-index:100;
       border: none;
       outline: none;

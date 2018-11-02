@@ -51,6 +51,17 @@ function loadGame() {
     $('audio').prop('muted', soundMuted);
   });
 
+  $(function() {
+    $('.SoundOff').click(function() {
+      var wasPlay = $(this).hasClass('fa-volume-up');
+      $(this).removeClass('fa-volume-up fa-volume-off');
+      var klass = wasPlay ? 'fa-volume-off' : 'fa-volume-up';
+      $(this).addClass(klass)
+    });
+  });
+  
+  
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
