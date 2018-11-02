@@ -41,7 +41,7 @@ function createStartPage(lang){
   let card3 = $(".card3");
   let a = jsonData.cards[lang];
 
-  cardHead.html('<h3>' + a.cardHeadline + '</h3>');
+  cardHead.html('<h4>' + a.cardHeadline + '</h4>');
   card1.html('<h5 class="card-title">'+ a.card1Name + '</h5>' +
   '<p class="card-text">' + a.card1Desc + '</p>' +
   '<a role="button" href="http://www.spelo.se/arkad/sparkanoid" target="_blank" class="btn btn-outline-light">' + a.cardButton + '</a>');
