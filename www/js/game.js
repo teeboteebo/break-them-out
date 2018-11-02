@@ -54,7 +54,7 @@ function loadGame() {
     movePaddle(deltaTime);
     moveBall(deltaTime);
   }
-
+  //
   function movePaddle(deltaTime) {
     const direction = calculatePaddleDirection();
     const velocity = direction * paddle.speed * deltaTime;
@@ -85,7 +85,7 @@ function loadGame() {
     else if (keysPressed.right) { ++movementVelocity; }
     return movementVelocity;
   }
-
+  
   function loseLife() {
     --lives;
     aiming = true;
@@ -133,6 +133,7 @@ function loadGame() {
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
+      //Score is not added while aiming
       if(!aiming){ score += 5; }
       updateInterface();
       ballCollide.play();
@@ -205,7 +206,7 @@ function loadGame() {
     $('.main-text').fadeIn(500);
   }
 
-  //Try to change on spacebar
+  //Pause the game
   function onEnterPress() {
     if (keysPressed.enter) { return; }
     keysPressed.enter = true;
@@ -218,7 +219,7 @@ function loadGame() {
 
     updateInterface();
   }
-
+  //Added Spacebar (32) for releasing the ball
   function setupKeyListeners() {
     $(window).keydown(function (e) {
       if (e.which === 37) { keysPressed.left = true; }
