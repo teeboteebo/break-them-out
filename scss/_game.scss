@@ -7,11 +7,15 @@ html {
 
     .instructions {
       background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
       @media only screen and (max-width: 1000px) {
         margin-top: 0px !important;
         .instructionsHolder {
           display: none;
         }
+      }
+      .enterimg {
+        height: 70px;
       }
     }
 
@@ -39,17 +43,17 @@ html {
       border: none;
       outline: none;
       background-color: transparent;
-      
+
     }
 
     .game {
       position: relative;
       background-color: #000;
-      background: url('/imgs/stage1.jpg');
+      background: url('/imgs/backgrounds/stage1.jpg');
       background-size: cover;
       background-position: bottom right;
       color: white;
-      min-height: 80vh;
+      min-height: 90vh;
       padding: 0px;
       width: 500px;
       // makes the text and buttons in the game unseletable, maybe change this to be done in JS/Jquery so it takes fewer lines
@@ -58,7 +62,7 @@ html {
       -khtml-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
-      user-select: none; 
+      user-select: none;
 
       .score {
         position: absolute;
@@ -90,7 +94,7 @@ html {
         width: 100px;
         height: 20px;
         background-color: #999;
-        background: url('/imgs/paddle.png');
+        background: url('/imgs/paddles/paddle1.png');
         background-size: 100% 100%;
         position: absolute;
         z-index: 1;
@@ -103,18 +107,18 @@ html {
         width: 50px;
         height: 15px;
         background-color: #777;
-        background: url('/imgs/brick.png');
+        background: url('/imgs/bricks/brick1.png');
         background-size: 100% 100%;
         position: absolute;
         z-index: 1;
       }
-      
+
       .ball {
         position: absolute;
         height: 20px;
         width: 20px;
         background-color: #fff;
-        background: url('/imgs/ball.png');
+        background: url('/imgs/balls/ball1.png');
         background-size: 100% 100%;
         border-radius: 50%;
         animation: spin .5s linear infinite;

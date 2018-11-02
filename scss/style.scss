@@ -2,7 +2,6 @@
 @import "variable-overrides";
 
 // The whole Bootstrap library
-
 @import "bootstrap/bootstrap";
 
 // Features
@@ -14,6 +13,7 @@
 @import "game";
 @import "header";
 @import "history";
+@import "highscore";
 
 // Import 8 bit font (font-family: 'Press Start 2P', cursive;)
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');

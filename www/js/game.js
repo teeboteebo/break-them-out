@@ -12,11 +12,44 @@ function loadGame() {
   let gameBorders = loadGameBorders();
   let aiming = true; 
 
+  // // Game styling variables this breaks the game?
+  // let i = 0;
+  // let backgrounds = [
+  //   url('/imgs/backgrounds/stage1.jpg'),
+  //   url('/imgs/backgrounds/stage2.png'),
+  //   url('/imgs/backgrounds/stage3.png'),
+  // ];
+  // let paddles = [
+  //   url('/imgs/paddles/paddle1.png'),
+  //   url('/imgs/paddles/paddle2.png'),
+  //   url('/imgs/paddles/paddle3.png'),
+  // ]
+  // let bricks = [
+  //   url('/imgs/bricks/brick1.png'),
+  //   url('/imgs/bricks/brick2.png'),
+  //   url('/imgs/bricks/brick3.png'),
+  // ];
+  // let balls = [
+  //   url('/imgs/balls/ball1.png'),
+  //   url('/imgs/balls/ball2.png'),
+  //   url('/imgs/balls/ball3.png'),
+  // ]
+
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
   let ballMiss = new sound("/gameSounds/loseLife.mp3");
   let themeSong = new sound("/gameSounds/themeSong.mp3");
   let gameOver = new sound("/gameSounds/gameOver.mp3");
+
+   // remove previous event listener
+  // (since this code might be run multiple times)
+  $('.sound-btn').unbind('click');
+
+  let soundMuted = false;
+  $(".sound-btn").click(function (){
+    soundMuted = !soundMuted;
+    $('audio').prop('muted', soundMuted);
+  });
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -194,7 +227,6 @@ function loadGame() {
       themeSong.stop();
       gameOver.play();
     } else if (!bricks.length) {
-      $('.main-text').text('CONGRATULATIONS - YOU WON');
       startNewRound();
     } else if (paused) {
       $('.main-text').text('PAUSED - press "ENTER" to continue...');
@@ -379,4 +411,11 @@ function loadGame() {
       this.sound.pause();
     }
   }
+  // This breaks the game?
+  // function changeLevel(i){
+  //   $('#.game').css("background-image", backgrounds[i]);
+  //   $('#.paddle').css("background-image", bricks[i]);
+  //   $('#.ball').css("background-image", balls[i]);
+  //   $('#.brick').css("background-image", bricks[i]);
+  // }
 }

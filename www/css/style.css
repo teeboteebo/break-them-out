@@ -8511,6 +8511,15 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
+}
+
 body {
   background-image: url("/imgs/8bit-wallpaper.png");
   background-color: #000;
@@ -8539,18 +8548,6 @@ body main {
 body main h2 {
   text-decoration: underline;
   font-size: 2.5rem;
-}
-
-body .first-place {
-  color: gold;
-}
-
-body .second-place {
-  color: silver;
-}
-
-body .third-place {
-  color: #f58b13;
 }
 
 @font-face {
@@ -8656,6 +8653,7 @@ html body {
 
 html body .instructions {
   background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -8665,6 +8663,10 @@ html body .instructions {
   html body .instructions .instructionsHolder {
     display: none;
   }
+}
+
+html body .instructions .enterimg {
+  height: 70px;
 }
 
 html body .soundOff, html body .pause-text {
@@ -8696,11 +8698,11 @@ html body .sound-btn {
 html body .game {
   position: relative;
   background-color: #000;
-  background: url("/imgs/stage1.jpg");
+  background: url("/imgs/backgrounds/stage1.jpg");
   background-size: cover;
   background-position: bottom right;
   color: white;
-  min-height: 80vh;
+  min-height: 90vh;
   padding: 0px;
   width: 500px;
   -webkit-touch-callout: none;
@@ -8741,7 +8743,7 @@ html body .game .paddle {
   width: 100px;
   height: 20px;
   background-color: #999;
-  background: url("/imgs/paddle.png");
+  background: url("/imgs/paddles/paddle1.png");
   background-size: 100% 100%;
   position: absolute;
   z-index: 1;
@@ -8754,7 +8756,7 @@ html body .game .brick {
   width: 50px;
   height: 15px;
   background-color: #777;
-  background: url("/imgs/brick.png");
+  background: url("/imgs/bricks/brick1.png");
   background-size: 100% 100%;
   position: absolute;
   z-index: 1;
@@ -8765,7 +8767,7 @@ html body .game .ball {
   height: 20px;
   width: 20px;
   background-color: #fff;
-  background: url("/imgs/ball.png");
+  background: url("/imgs/balls/ball1.png");
   background-size: 100% 100%;
   border-radius: 50%;
   animation: spin .5s linear infinite;
@@ -8824,4 +8826,18 @@ header nav .swe-btn, header nav .eng-btn {
   .history p h3 {
     margin: 1.2rem 0;
   }
+}
+
+.high-score .first-place {
+  color: lightyellow;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  font-weight: bold;
+}
+
+.high-score .second-place {
+  color: silver;
+}
+
+.high-score .third-place {
+  color: #cd7f32;
 }
