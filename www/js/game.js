@@ -240,7 +240,7 @@ function loadGame() {
     } else if (!bricks.length) {
       startNewRound();
     } else if (paused) {
-      $('.main-text').text('PAUSED - press "ENTER" to continue...');
+      $('.main-text').text('PAUSED - press "ENTER" or click Pause button to continue...');
       themeSong.stop();
     } else {
       $('.main-text').text('');
@@ -259,7 +259,7 @@ function loadGame() {
     } else {
       startNewGame();
     }
-
+    
     updateInterface();
   }
   //Added Spacebar (32) for releasing the ball
@@ -282,6 +282,7 @@ function loadGame() {
 
       keysPressed.right = true;
     });
+    
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
 
@@ -290,7 +291,22 @@ function loadGame() {
     $(".rightBtn").on("touchend mouseup", function () {
       keysPressed.right = false;
     });
+
     $(".leftBtn").on("touchend mouseup", function () {
+      keysPressed.left = false;
+    });
+
+    $(".pause-game").on("touchstart mousedown", function () {
+      keysPressed.left = true;
+      if (lives > 0) {
+        paused = !paused;
+      } else {
+        startNewGame();
+      }  
+      updateInterface();
+    });
+
+    $(".pause-game").on("touchend mouseup", function () {
       keysPressed.left = false;
     });
   }
