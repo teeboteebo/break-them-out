@@ -296,7 +296,7 @@ function loadGame() {
       keysPressed.left = false;
     });
 
-    $(".pause-game").on("touchstart mousedown", function () {
+    $(".pause-game").on("mousedown", function () {
       keysPressed.left = true;
       if (lives > 0) {
         paused = !paused;
@@ -306,8 +306,8 @@ function loadGame() {
       updateInterface();
     });
 
-    $(".pause-game").on("touchend mouseup", function () {
-      keysPressed.left = false;
+    $(".pause-game").on("mouseup", function () {
+      keysPressed.left = false; 
     });
   }
 
