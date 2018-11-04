@@ -445,4 +445,10 @@ function loadGame() {
   //   $('#.ball').css("background-image", balls[i]);
   //   $('#.brick').css("background-image", bricks[i]);
   // }
+  
+  // disables "rightclick" on the game
+  $(".game").on("contextmenu",function(){
+      return false;
+  }); 
+  
 }
