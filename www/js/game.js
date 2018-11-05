@@ -71,6 +71,7 @@ function loadGame() {
     lives = 3;
     score = 0;
     paused = false;
+    aiming = true;
 
     resetPaddle();
     resetBall();
@@ -180,7 +181,7 @@ function loadGame() {
       //Score is not added while aiming
       if(!aiming){
         score += 5;
-        ballCollide.play(); 
+        ballCollide.play();
       }
       updateInterface();
     }
@@ -239,6 +240,8 @@ function loadGame() {
       $('.main-text').text('GAME OVER - press "ENTER" to play again');
       themeSong.stop();
       gameOver.play();
+      aiming = false;
+      paused = true;    
     } else if (!bricks.length) {
       startNewRound();
     } else if (paused) {
