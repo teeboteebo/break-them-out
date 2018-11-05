@@ -41,6 +41,27 @@ function loadGame() {
   let themeSong = new sound("/gameSounds/themeSong.mp3");
   let gameOver = new sound("/gameSounds/gameOver.mp3");
 
+   // remove previous event listener
+  // (since this code might be run multiple times)
+  $('.sound-btn').unbind('click');
+
+  let soundMuted = false;
+  $(".sound-btn").click(function (){
+    soundMuted = !soundMuted;
+    $('audio').prop('muted', soundMuted);
+  });
+
+  $(function() {
+    $('.SoundOff').click(function() {
+      var wasPlay = $(this).hasClass('fa-volume-up');
+      $(this).removeClass('fa-volume-up fa-volume-off');
+      var klass = wasPlay ? 'fa-volume-off' : 'fa-volume-up';
+      $(this).addClass(klass)
+    });
+  });
+  
+  
+
   // Setup key listeners before starting the first game
   setupKeyListeners();
   startNewGame();
@@ -77,7 +98,7 @@ function loadGame() {
     movePaddle(deltaTime);
     moveBall(deltaTime);
   }
-
+  //
   function movePaddle(deltaTime) {
     const direction = calculatePaddleDirection();
     const velocity = direction * paddle.speed * deltaTime;
@@ -108,7 +129,7 @@ function loadGame() {
     else if (keysPressed.right) { ++movementVelocity; }
     return movementVelocity;
   }
-
+  
   function loseLife() {
     --lives;
     aiming = true;
@@ -156,6 +177,7 @@ function loadGame() {
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
+      //Score is not added while aiming
       if(!aiming){ score += 5; }
       updateInterface();
       ballCollide.play();
@@ -218,7 +240,7 @@ function loadGame() {
     } else if (!bricks.length) {
       startNewRound();
     } else if (paused) {
-      $('.main-text').text('PAUSED - press "ENTER" to continue...');
+      $('.main-text').text('PAUSED - press "ENTER" or click Pause button to continue...');
       themeSong.stop();
     } else {
       $('.main-text').text('');
@@ -227,7 +249,7 @@ function loadGame() {
     $('.main-text').fadeIn(500);
   }
 
-  //Try to change on spacebar
+  //Pause the game
   function onEnterPress() {
     if (keysPressed.enter) { return; }
     keysPressed.enter = true;
@@ -237,16 +259,16 @@ function loadGame() {
     } else {
       startNewGame();
     }
-
+    
     updateInterface();
   }
-
+  //Added Spacebar (32) for releasing the ball
   function setupKeyListeners() {
     $(window).keydown(function (e) {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { aiming = false; }
+      if (e.which === 32) { aiming = false; e.preventDefault();}
     });
 
     $(window).keyup(function (e) {
@@ -260,6 +282,7 @@ function loadGame() {
 
       keysPressed.right = true;
     });
+    
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
 
@@ -268,8 +291,23 @@ function loadGame() {
     $(".rightBtn").on("touchend mouseup", function () {
       keysPressed.right = false;
     });
+
     $(".leftBtn").on("touchend mouseup", function () {
       keysPressed.left = false;
+    });
+
+    $(".pause-game").on("mousedown", function () {
+      keysPressed.left = true;
+      if (lives > 0) {
+        paused = !paused;
+      } else {
+        startNewGame();
+      }  
+      updateInterface();
+    });
+
+    $(".pause-game").on("mouseup", function () {
+      keysPressed.left = false; 
     });
   }
 
@@ -407,4 +445,10 @@ function loadGame() {
   //   $('#.ball').css("background-image", balls[i]);
   //   $('#.brick').css("background-image", bricks[i]);
   // }
+  
+  // disables "rightclick" on the game
+  $(".game").on("contextmenu",function(){
+      return false;
+  }); 
+  
 }
