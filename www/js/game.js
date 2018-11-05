@@ -59,8 +59,8 @@ function loadGame() {
       $(this).addClass(klass)
     });
   });
-  
-  
+
+
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -129,7 +129,7 @@ function loadGame() {
     else if (keysPressed.right) { ++movementVelocity; }
     return movementVelocity;
   }
-  
+
   function loseLife() {
     --lives;
     aiming = true;
@@ -178,9 +178,11 @@ function loadGame() {
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
       //Score is not added while aiming
-      if(!aiming){ score += 5; }
+      if(!aiming){
+        score += 5;
+        ballCollide.play(); 
+      }
       updateInterface();
-      ballCollide.play();
     }
   }
 
@@ -259,7 +261,7 @@ function loadGame() {
     } else {
       startNewGame();
     }
-    
+
     updateInterface();
   }
   //Added Spacebar (32) for releasing the ball
@@ -282,7 +284,7 @@ function loadGame() {
 
       keysPressed.right = true;
     });
-    
+
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
 
@@ -302,12 +304,12 @@ function loadGame() {
         paused = !paused;
       } else {
         startNewGame();
-      }  
+      }
       updateInterface();
     });
 
     $(".pause-game").on("mouseup", function () {
-      keysPressed.left = false; 
+      keysPressed.left = false;
     });
   }
 
@@ -445,10 +447,10 @@ function loadGame() {
   //   $('#.ball').css("background-image", balls[i]);
   //   $('#.brick').css("background-image", bricks[i]);
   // }
-  
+
   // disables "rightclick" on the game
   $(".game").on("contextmenu",function(){
       return false;
-  }); 
-  
+  });
+
 }
