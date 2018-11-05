@@ -10,30 +10,30 @@ function loadGame() {
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
-  let aiming = true; 
+  let aiming = true;
 
   // // Game styling variables this breaks the game?
   // let i = 0;
   // let backgrounds = [
-  //   url('/imgs/backgrounds/stage1.jpg'),
-  //   url('/imgs/backgrounds/stage2.png'),
-  //   url('/imgs/backgrounds/stage3.png'),
+  //   "url('/imgs/backgrounds/stage1.jpg')",
+  //   "url('/imgs/backgrounds/stage2.png')",
+  //   "url('/imgs/backgrounds/stage3.png')""
   // ];
   // let paddles = [
-  //   url('/imgs/paddles/paddle1.png'),
-  //   url('/imgs/paddles/paddle2.png'),
-  //   url('/imgs/paddles/paddle3.png'),
-  // ]
-  // let bricks = [
-  //   url('/imgs/bricks/brick1.png'),
-  //   url('/imgs/bricks/brick2.png'),
-  //   url('/imgs/bricks/brick3.png'),
+  //   "url('/imgs/paddles/paddle1.png')",
+  //   "url('/imgs/paddles/paddle2.png')",
+  //   "url('/imgs/paddles/paddle3.png')"
+  // ];
+  // let bricksstyle = [
+  //   "url('/imgs/bricks/brick1.png')",
+  //   "url('/imgs/bricks/brick2.png')",
+  //   "url('/imgs/bricks/brick3.png')"
   // ];
   // let balls = [
-  //   url('/imgs/balls/ball1.png'),
-  //   url('/imgs/balls/ball2.png'),
-  //   url('/imgs/balls/ball3.png'),
-  // ]
+  //   "url('/imgs/balls/ball1.png')",
+  //   "url('/imgs/balls/ball2.png')",
+  //   "url('/imgs/balls/ball3.png')"
+  // ];
 
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
@@ -59,8 +59,8 @@ function loadGame() {
       $(this).addClass(klass)
     });
   });
-  
-  
+
+
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -129,7 +129,7 @@ function loadGame() {
     else if (keysPressed.right) { ++movementVelocity; }
     return movementVelocity;
   }
-  
+
   function loseLife() {
     --lives;
     aiming = true;
@@ -173,14 +173,16 @@ function loadGame() {
       // paddle center hitbox
       // if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
       //   ball.direction.x = 0
-      // } 
+      // }
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
       //Score is not added while aiming
-      if(!aiming){ score += 5; }
+      if(!aiming){
+        score += 5;
+        ballCollide.play(); 
+      }
       updateInterface();
-      ballCollide.play();
     }
   }
 
@@ -259,7 +261,7 @@ function loadGame() {
     } else {
       startNewGame();
     }
-    
+
     updateInterface();
   }
   //Added Spacebar (32) for releasing the ball
@@ -282,7 +284,7 @@ function loadGame() {
 
       keysPressed.right = true;
     });
-    
+
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
 
@@ -302,7 +304,7 @@ function loadGame() {
         paused = !paused;
       } else {
         startNewGame();
-      }  
+      }
       updateInterface();
     });
 
@@ -445,10 +447,10 @@ function loadGame() {
   //   $('#.ball').css("background-image", balls[i]);
   //   $('#.brick').css("background-image", bricks[i]);
   // }
-  
+
   // disables "rightclick" on the game
   $(".game").on("contextmenu",function(){
       return false;
-  }); 
-  
+  });
+
 }
