@@ -10,30 +10,30 @@ function loadGame() {
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
-  let aiming = true; 
+  let aiming = true;
 
   // // Game styling variables this breaks the game?
   // let i = 0;
   // let backgrounds = [
-  //   url('/imgs/backgrounds/stage1.jpg'),
-  //   url('/imgs/backgrounds/stage2.png'),
-  //   url('/imgs/backgrounds/stage3.png'),
+  //   "url('/imgs/backgrounds/stage1.jpg')",
+  //   "url('/imgs/backgrounds/stage2.png')",
+  //   "url('/imgs/backgrounds/stage3.png')""
   // ];
   // let paddles = [
-  //   url('/imgs/paddles/paddle1.png'),
-  //   url('/imgs/paddles/paddle2.png'),
-  //   url('/imgs/paddles/paddle3.png'),
-  // ]
-  // let bricks = [
-  //   url('/imgs/bricks/brick1.png'),
-  //   url('/imgs/bricks/brick2.png'),
-  //   url('/imgs/bricks/brick3.png'),
+  //   "url('/imgs/paddles/paddle1.png')",
+  //   "url('/imgs/paddles/paddle2.png')",
+  //   "url('/imgs/paddles/paddle3.png')"
+  // ];
+  // let bricksstyle = [
+  //   "url('/imgs/bricks/brick1.png')",
+  //   "url('/imgs/bricks/brick2.png')",
+  //   "url('/imgs/bricks/brick3.png')"
   // ];
   // let balls = [
-  //   url('/imgs/balls/ball1.png'),
-  //   url('/imgs/balls/ball2.png'),
-  //   url('/imgs/balls/ball3.png'),
-  // ]
+  //   "url('/imgs/balls/ball1.png')",
+  //   "url('/imgs/balls/ball2.png')",
+  //   "url('/imgs/balls/ball3.png')"
+  // ];
 
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
@@ -152,7 +152,7 @@ function loadGame() {
       // paddle center hitbox
       // if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
       //   ball.direction.x = 0
-      // } 
+      // }
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
