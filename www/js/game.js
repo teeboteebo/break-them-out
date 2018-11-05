@@ -15,25 +15,25 @@ function loadGame() {
   // // Game styling variables this breaks the game?
   // let i = 0;
   // let backgrounds = [
-  //   url('/imgs/backgrounds/stage1.jpg'),
-  //   url('/imgs/backgrounds/stage2.png'),
-  //   url('/imgs/backgrounds/stage3.png'),
+  //   "url('/imgs/backgrounds/stage1.jpg')",
+  //   "url('/imgs/backgrounds/stage2.png')",
+  //   "url('/imgs/backgrounds/stage3.png')""
   // ];
   // let paddles = [
-  //   url('/imgs/paddles/paddle1.png'),
-  //   url('/imgs/paddles/paddle2.png'),
-  //   url('/imgs/paddles/paddle3.png'),
-  // ]
-  // let bricks = [
-  //   url('/imgs/bricks/brick1.png'),
-  //   url('/imgs/bricks/brick2.png'),
-  //   url('/imgs/bricks/brick3.png'),
+  //   "url('/imgs/paddles/paddle1.png')",
+  //   "url('/imgs/paddles/paddle2.png')",
+  //   "url('/imgs/paddles/paddle3.png')"
+  // ];
+  // let bricksstyle = [
+  //   "url('/imgs/bricks/brick1.png')",
+  //   "url('/imgs/bricks/brick2.png')",
+  //   "url('/imgs/bricks/brick3.png')"
   // ];
   // let balls = [
-  //   url('/imgs/balls/ball1.png'),
-  //   url('/imgs/balls/ball2.png'),
-  //   url('/imgs/balls/ball3.png'),
-  // ]
+  //   "url('/imgs/balls/ball1.png')",
+  //   "url('/imgs/balls/ball2.png')",
+  //   "url('/imgs/balls/ball3.png')"
+  // ];
 
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
@@ -71,6 +71,7 @@ function loadGame() {
     lives = 3;
     score = 0;
     paused = false;
+    aiming = true;
 
     resetPaddle();
     resetBall();
@@ -173,7 +174,7 @@ function loadGame() {
       // paddle center hitbox
       // if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
       //   ball.direction.x = 0
-      // } 
+      // }
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
@@ -181,9 +182,8 @@ function loadGame() {
       if (!aiming) {
         score += 5;
         updateInterface();
+        ballCollide.play();
       }
-      
-      ballCollide.play();
     }
   }
 
@@ -240,6 +240,8 @@ function loadGame() {
       $('.main-text').text('GAME OVER - press "ENTER" to play again');
       themeSong.stop();
       gameOver.play();
+      aiming = false;
+      paused = true;    
       postNewHighscore();
     } else if (!bricks.length) {
       startNewRound();
@@ -301,7 +303,7 @@ function loadGame() {
     });
 
     $(".pause-game").on("mousedown", function () {
-      keysPressed.left = true;
+      // keysPressed.left = true;
       if (lives > 0) {
         paused = !paused;
       } else {
@@ -310,9 +312,9 @@ function loadGame() {
       updateInterface();
     });
 
-    $(".pause-game").on("mouseup", function () {
-      keysPressed.left = false;
-    });
+    // $(".pause-game").on("mouseup", function () {
+    //   keysPressed.left = false; 
+    // });
   }
 
   function loadGameBorders() {
@@ -341,7 +343,7 @@ function loadGame() {
     ball.speed = initialBallSpeed;
 
     ball.width = ball.$.width();
-    ball.height = ball.$.height();
+    ball.height = ball.$.height() ;
 
     ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
     ball.$.css('top', (ball.top = paddle.top - ball.height));
