@@ -5,8 +5,8 @@ function loadGame() {
   let paused;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 300;
-  const initialBallSpeed = 320;
+  let initialPaddleSpeed = 300;
+  let initialBallSpeed = 320;
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
@@ -16,8 +16,8 @@ function loadGame() {
   let level = 0;
   let backgrounds = [
     "url('/imgs/backgrounds/stage1.jpg')",
-    "url('/imgs/backgrounds/stage2.png')",
-    "url('/imgs/backgrounds/stage3.png')"
+    "url('/imgs/backgrounds/stage2.jpg')",
+    "url('/imgs/backgrounds/stage3.jpg')"
   ];
   let paddles = [
     "url('/imgs/paddles/paddle1.png')",
@@ -41,18 +41,18 @@ function loadGame() {
   let themeSong = new sound("/gameSounds/themeSong.mp3");
   let gameOver = new sound("/gameSounds/gameOver.mp3");
 
-  // remove previous event listener
+   // remove previous event listener
   // (since this code might be run multiple times)
   $('.sound-btn').unbind('click');
 
   let soundMuted = false;
-  $(".sound-btn").click(function () {
+  $(".sound-btn").click(function (){
     soundMuted = !soundMuted;
     $('audio').prop('muted', soundMuted);
   });
 
-  $(function () {
-    $('.SoundOff').click(function () {
+  $(function() {
+    $('.SoundOff').click(function() {
       var wasPlay = $(this).hasClass('fa-volume-up');
       $(this).removeClass('fa-volume-up fa-volume-off');
       var klass = wasPlay ? 'fa-volume-off' : 'fa-volume-up';
@@ -76,7 +76,7 @@ function loadGame() {
     resetPaddle();
     resetBall();
     spawnBricks();
-
+    levelUp();
     updateInterface();
     startInterval();
     themeSong.play();
@@ -85,6 +85,10 @@ function loadGame() {
   // Loads in a new set of bricks in allowing you to keep on player upon clearing
   function startNewRound() {
     paused = false;
+    aiming = true;
+    resetBall();
+    resetPaddle();
+    levelUp();
     spawnBricks();
     updateInterface();
 
@@ -104,14 +108,14 @@ function loadGame() {
     const direction = calculatePaddleDirection();
     const velocity = direction * paddle.speed * deltaTime;
     paddle.left += velocity;
-    if (aiming) { resetBall(); moveBall(); }
+    if(aiming){ resetBall(); moveBall();  }
     if (paddle.left < gameBorders.left) { paddle.left = 0; }
     if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
     paddle.$.css('left', paddle.left);
   }
 
   function moveBall(deltaTime) {
-    if (!aiming) {
+    if(!aiming){
       ball.left += ball.direction.x * ball.speed * deltaTime;
       ball.top += ball.direction.y * ball.speed * deltaTime;
     }
@@ -165,25 +169,25 @@ function loadGame() {
     if (!isRectAOutsideRectB(ball, paddle)) {
       // this if statement changes the direction the ball goes on the x axis (left and right)
       // when the ball hits the paddle
-      if (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2)) {
-        ball.direction.x = -1;
+      if (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) ){
+      ball.direction.x = -1;
       }
       else {
-        ball.direction.x = 1;
+      ball.direction.x = 1;
       }
       // paddle center hitbox
-      // if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
-      //   ball.direction.x = 0
-      // }
+      if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
+        ball.direction.x = 0
+      }
       ball.direction.y *= -1;
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
       //Score is not added while aiming
-      if (!aiming) {
+      if(!aiming){
         score += 5;
-        updateInterface();
         ballCollide.play();
       }
+      updateInterface();
     }
   }
 
@@ -205,7 +209,7 @@ function loadGame() {
         ballCollide.play();
       }
     }
-    if (!paused && bricks.length == 0) {
+    if (bricks.length == 0) {
       paused = true;
       updateInterface();
     }
@@ -241,8 +245,9 @@ function loadGame() {
       themeSong.stop();
       gameOver.play();
       aiming = false;
-      paused = true;    
-      postNewHighscore();
+      paused = true;
+      initialBallSpeed = 320;
+      initialPaddleSpeed = 300;
     } else if (!bricks.length) {
       startNewRound();
     } else if (paused) {
@@ -274,7 +279,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { aiming = false; e.preventDefault(); }
+      if (e.which === 32) { aiming = false; e.preventDefault();}
     });
 
     $(window).keyup(function (e) {
@@ -285,13 +290,13 @@ function loadGame() {
 
     $(".rightBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
-      aiming = false;
+
       keysPressed.right = true;
     });
 
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
-      aiming = false;
+
       keysPressed.left = true;
     });
     $(".rightBtn").on("touchend mouseup", function () {
@@ -343,10 +348,10 @@ function loadGame() {
     ball.speed = initialBallSpeed;
 
     ball.width = ball.$.width();
-    ball.height = ball.$.height();
+    ball.height = ball.$.height() ;
 
     ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
-    ball.$.css('top', (ball.top = paddle.top - ball.height));
+    ball.$.css('top', (ball.top = paddle.top - ball.height  ));
     ball.direction = { x: 0, y: -1 };
 
   }
@@ -355,7 +360,7 @@ function loadGame() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
     const colors = [
-      0, 0, 0, 0
+      0, 0, 0, 0, 0
     ];
 
     let prevLeft = brickCSS.left;
@@ -366,31 +371,31 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.5;
     }
     for (let color of colors) {
-      const brick = createBrick(prevLeft - 400, brickCSS.top + 50, brickCSS.width, brickCSS.height);
+      const brick = createBrick(prevLeft - 375, brickCSS.top + 50, brickCSS.width, brickCSS.height);
 
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.5;
     }
     for (let color of colors) {
-      const brick = createBrick(prevLeft - 800, brickCSS.top + 100, brickCSS.width, brickCSS.height);
+      const brick = createBrick(prevLeft - 750, brickCSS.top + 100, brickCSS.width, brickCSS.height);
 
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.5;
     }
     for (let color of colors) {
-      const brick = createBrick(prevLeft - 1200, brickCSS.top + 150, brickCSS.width, brickCSS.height);
+      const brick = createBrick(prevLeft - 1125, brickCSS.top + 150, brickCSS.width, brickCSS.height);
 
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.5;
     }
   }
 
@@ -445,27 +450,31 @@ function loadGame() {
     }
   }
   // This breaks the game?
-  // function changeLevel(i){
-  //   $('#.game').css("background-image", backgrounds[i]);
-  //   $('#.paddle').css("background-image", bricks[i]);
-  //   $('#.ball').css("background-image", balls[i]);
-  //   $('#.brick').css("background-image", bricks[i]);
-  // }
+  function levelUp(){
+    // "paddle.speed = initialPaddleSpeed*2" doesn't work for some reason?
+    // Paddle.speed limit is 750
+    if (paddle.speed < 750){
+      initialPaddleSpeed = initialPaddleSpeed*1.25;
+      paddle.speed = initialPaddleSpeed;
+    }
+    initialBallSpeed = initialBallSpeed*1.25;
 
-  // disables "rightclick" on the game
-  $(".game").on("contextmenu", function () {
-    return false;
-  });
 
-  $('.send-to-highscore').on('click', postNewHighscore);
-
-  function postNewHighscore() {
-    let name = prompt('Write your name');
-    $.post("/add-score", { name, score }, function (responseData) {
-      console.log('the new highscore-list is:', responseData);
-      console.error('append/use the new highscore-list then remove this console.error');
-    }); 
+    if (level > 2.1) {
+      level = 0;
+    }
+    if (level <= 2){
+      $('.game').css("background-image", backgrounds[level]);
+      // $('.paddle').css("background-image", bricks[level]);
+      // $('.ball').css("background-image", balls[level]);
+      // $('.brick').css("background-image", bricks[level]);
+    }
+    level++;
   }
 
+  // disables "rightclick" on the game
+  $(".game").on("contextmenu",function(){
+      return false;
+  });
 
 }
