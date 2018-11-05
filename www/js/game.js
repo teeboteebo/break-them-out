@@ -302,7 +302,7 @@ function loadGame() {
     });
 
     $(".pause-game").on("mousedown", function () {
-      keysPressed.left = true;
+      // keysPressed.left = true;
       if (lives > 0) {
         paused = !paused;
       } else {
@@ -311,9 +311,9 @@ function loadGame() {
       updateInterface();
     });
 
-    $(".pause-game").on("mouseup", function () {
-      keysPressed.left = false;
-    });
+    // $(".pause-game").on("mouseup", function () {
+    //   keysPressed.left = false; 
+    // });
   }
 
   function loadGameBorders() {
@@ -342,10 +342,10 @@ function loadGame() {
     ball.speed = initialBallSpeed;
 
     ball.width = ball.$.width();
-    ball.height = ball.$.height();
+    ball.height = ball.$.height() ;
 
     ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
-    ball.$.css('top', (ball.top = paddle.top - ball.height ));
+    ball.$.css('top', (ball.top = paddle.top - ball.height  ));
     ball.direction = { x: 0, y: -1 };
 
   }
