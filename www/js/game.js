@@ -13,27 +13,27 @@ function loadGame() {
   let aiming = true;
 
   // // Game styling variables this breaks the game?
-  // let i = 0;
-  // let backgrounds = [
-  //   "url('/imgs/backgrounds/stage1.jpg')",
-  //   "url('/imgs/backgrounds/stage2.png')",
-  //   "url('/imgs/backgrounds/stage3.png')""
-  // ];
-  // let paddles = [
-  //   "url('/imgs/paddles/paddle1.png')",
-  //   "url('/imgs/paddles/paddle2.png')",
-  //   "url('/imgs/paddles/paddle3.png')"
-  // ];
-  // let bricksstyle = [
-  //   "url('/imgs/bricks/brick1.png')",
-  //   "url('/imgs/bricks/brick2.png')",
-  //   "url('/imgs/bricks/brick3.png')"
-  // ];
-  // let balls = [
-  //   "url('/imgs/balls/ball1.png')",
-  //   "url('/imgs/balls/ball2.png')",
-  //   "url('/imgs/balls/ball3.png')"
-  // ];
+  let level = 0;
+  let backgrounds = [
+    "url('/imgs/backgrounds/stage1.jpg')",
+    "url('/imgs/backgrounds/stage2.png')",
+    "url('/imgs/backgrounds/stage3.png')"
+  ];
+  let paddles = [
+    "url('/imgs/paddles/paddle1.png')",
+    "url('/imgs/paddles/paddle2.png')",
+    "url('/imgs/paddles/paddle3.png')"
+  ];
+  let bricksstyle = [
+    "url('/imgs/bricks/brick1.png')",
+    "url('/imgs/bricks/brick2.png')",
+    "url('/imgs/bricks/brick3.png')"
+  ];
+  let balls = [
+    "url('/imgs/balls/ball1.png')",
+    "url('/imgs/balls/ball2.png')",
+    "url('/imgs/balls/ball3.png')"
+  ];
 
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
@@ -285,13 +285,13 @@ function loadGame() {
 
     $(".rightBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
-
+      aiming = false;
       keysPressed.right = true;
     });
 
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
-
+      aiming = false;
       keysPressed.left = true;
     });
     $(".rightBtn").on("touchend mouseup", function () {
@@ -313,7 +313,7 @@ function loadGame() {
     });
 
     // $(".pause-game").on("mouseup", function () {
-    //   keysPressed.left = false; 
+    //   keysPressed.left = false;
     // });
   }
 
@@ -343,7 +343,7 @@ function loadGame() {
     ball.speed = initialBallSpeed;
 
     ball.width = ball.$.width();
-    ball.height = ball.$.height() ;
+    ball.height = ball.$.height();
 
     ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
     ball.$.css('top', (ball.top = paddle.top - ball.height));
