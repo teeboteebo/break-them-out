@@ -465,9 +465,9 @@ function loadGame() {
     }
     if (level <= 2){
       $('.game').css("background-image", backgrounds[level]);
-      // $('.paddle').css("background-image", bricks[level]);
-      // $('.ball').css("background-image", balls[level]);
-      // $('.brick').css("background-image", bricks[level]);
+      $('.paddle').css("background-image", paddles[level]);
+      $('.ball').css("background-image", balls[level]);
+      $('.brick').css("background-image", bricksstyle[level]);
     }
     level++;
   }

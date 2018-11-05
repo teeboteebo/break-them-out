@@ -96,8 +96,7 @@ html {
       .paddle {
         width: 100px;
         height: 20px;
-        background-color: #999;
-        background: url('/imgs/paddles/paddle1.png');
+        background-color: rgba(0,0,0,0);
         background-size: 100% 100%;
         position: absolute;
         z-index: 1;
@@ -109,7 +108,7 @@ html {
         top: 100px;
         width: 50px;
         height: 15px;
-        background-color: #777;
+        background-color: rgba(0,0,0,0);
         background: url('/imgs/bricks/brick1.png');
         background-size: 100% 100%;
         position: absolute;
@@ -120,7 +119,7 @@ html {
         position: absolute;
         height: 20px;
         width: 20px;
-        background-color: #fff;
+        background-color: rgba(0,0,0,0);
         background: url('/imgs/balls/ball1.png');
         background-size: 100% 100%;
         border-radius: 50%;
