@@ -108,8 +108,8 @@ html {
         top: 100px;
         width: 50px;
         height: 15px;
+        background-image: url('/imgs/bricks/brick2.png');
         background-color: rgba(0,0,0,0);
-        background: url('/imgs/bricks/brick1.png');
         background-size: 100% 100%;
         position: absolute;
         z-index: 1;
@@ -120,7 +120,6 @@ html {
         height: 20px;
         width: 20px;
         background-color: rgba(0,0,0,0);
-        background: url('/imgs/balls/ball1.png');
         background-size: 100% 100%;
         border-radius: 50%;
         animation: spin .5s linear infinite;
