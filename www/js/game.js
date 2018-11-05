@@ -13,27 +13,27 @@ function loadGame() {
   let aiming = true;
 
   // // Game styling variables this breaks the game?
-  // let i = 0;
-  // let backgrounds = [
-  //   "url('/imgs/backgrounds/stage1.jpg')",
-  //   "url('/imgs/backgrounds/stage2.png')",
-  //   "url('/imgs/backgrounds/stage3.png')""
-  // ];
-  // let paddles = [
-  //   "url('/imgs/paddles/paddle1.png')",
-  //   "url('/imgs/paddles/paddle2.png')",
-  //   "url('/imgs/paddles/paddle3.png')"
-  // ];
-  // let bricksstyle = [
-  //   "url('/imgs/bricks/brick1.png')",
-  //   "url('/imgs/bricks/brick2.png')",
-  //   "url('/imgs/bricks/brick3.png')"
-  // ];
-  // let balls = [
-  //   "url('/imgs/balls/ball1.png')",
-  //   "url('/imgs/balls/ball2.png')",
-  //   "url('/imgs/balls/ball3.png')"
-  // ];
+  let level = 0;
+  let backgrounds = [
+    "url('/imgs/backgrounds/stage1.jpg')",
+    "url('/imgs/backgrounds/stage2.png')",
+    "url('/imgs/backgrounds/stage3.png')"
+  ];
+  let paddles = [
+    "url('/imgs/paddles/paddle1.png')",
+    "url('/imgs/paddles/paddle2.png')",
+    "url('/imgs/paddles/paddle3.png')"
+  ];
+  let bricksstyle = [
+    "url('/imgs/bricks/brick1.png')",
+    "url('/imgs/bricks/brick2.png')",
+    "url('/imgs/bricks/brick3.png')"
+  ];
+  let balls = [
+    "url('/imgs/balls/ball1.png')",
+    "url('/imgs/balls/ball2.png')",
+    "url('/imgs/balls/ball3.png')"
+  ];
 
   let levelClear = new sound("/gameSounds/levelCleared.mp3");
   let ballCollide = new sound("/gameSounds/ballCollide.mp3");
@@ -241,7 +241,7 @@ function loadGame() {
       themeSong.stop();
       gameOver.play();
       aiming = false;
-      paused = true;    
+      paused = true;
     } else if (!bricks.length) {
       startNewRound();
     } else if (paused) {
@@ -312,7 +312,7 @@ function loadGame() {
     });
 
     // $(".pause-game").on("mouseup", function () {
-    //   keysPressed.left = false; 
+    //   keysPressed.left = false;
     // });
   }
 
