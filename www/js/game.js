@@ -281,13 +281,13 @@ function loadGame() {
 
     $(".rightBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
-
+      aiming = false;
       keysPressed.right = true;
     });
 
     $(".leftBtn").on("touchstart mousedown", function () {
       console.log("keysPressed");
-
+      aiming = false;
       keysPressed.left = true;
     });
     $(".rightBtn").on("touchend mouseup", function () {
@@ -339,10 +339,10 @@ function loadGame() {
     ball.speed = initialBallSpeed;
 
     ball.width = ball.$.width();
-    ball.height = ball.$.height() ;
+    ball.height = ball.$.height();
 
     ball.$.css('left', (ball.left = paddle.left + paddle.width / 2 - ball.width / 2));
-    ball.$.css('top', (ball.top = paddle.top - ball.height  ));
+    ball.$.css('top', (ball.top = paddle.top - ball.height));
     ball.direction = { x: 0, y: -1 };
 
   }
