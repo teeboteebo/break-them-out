@@ -41,18 +41,18 @@ function loadGame() {
   let themeSong = new sound("/gameSounds/themeSong.mp3");
   let gameOver = new sound("/gameSounds/gameOver.mp3");
 
-   // remove previous event listener
+  // remove previous event listener
   // (since this code might be run multiple times)
   $('.sound-btn').unbind('click');
 
   let soundMuted = false;
-  $(".sound-btn").click(function (){
+  $(".sound-btn").click(function () {
     soundMuted = !soundMuted;
     $('audio').prop('muted', soundMuted);
   });
 
-  $(function() {
-    $('.SoundOff').click(function() {
+  $(function () {
+    $('.SoundOff').click(function () {
       var wasPlay = $(this).hasClass('fa-volume-up');
       $(this).removeClass('fa-volume-up fa-volume-off');
       var klass = wasPlay ? 'fa-volume-off' : 'fa-volume-up';
@@ -71,6 +71,7 @@ function loadGame() {
     lives = 3;
     score = 0;
     paused = false;
+    aiming = true;
 
     resetPaddle();
     resetBall();
@@ -103,14 +104,14 @@ function loadGame() {
     const direction = calculatePaddleDirection();
     const velocity = direction * paddle.speed * deltaTime;
     paddle.left += velocity;
-    if(aiming){ resetBall(); moveBall();  }
+    if (aiming) { resetBall(); moveBall(); }
     if (paddle.left < gameBorders.left) { paddle.left = 0; }
     if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
     paddle.$.css('left', paddle.left);
   }
 
   function moveBall(deltaTime) {
-    if(!aiming){
+    if (!aiming) {
       ball.left += ball.direction.x * ball.speed * deltaTime;
       ball.top += ball.direction.y * ball.speed * deltaTime;
     }
@@ -164,11 +165,11 @@ function loadGame() {
     if (!isRectAOutsideRectB(ball, paddle)) {
       // this if statement changes the direction the ball goes on the x axis (left and right)
       // when the ball hits the paddle
-      if (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) ){
-      ball.direction.x = -1;
+      if (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2)) {
+        ball.direction.x = -1;
       }
       else {
-      ball.direction.x = 1;
+        ball.direction.x = 1;
       }
       // paddle center hitbox
       // if  (paddle.left + (paddle.width / 2) > ball.left + (ball.width / 2) - 10 && paddle.left + (paddle.width / 2) < ball.left + (ball.width / 2) + 10 ) {
@@ -178,11 +179,11 @@ function loadGame() {
       // ball.direction.x *= 1;
       ball.top = paddle.top - ball.height;
       //Score is not added while aiming
-      if(!aiming){
+      if (!aiming) {
         score += 5;
-        ballCollide.play(); 
+        updateInterface();
+        ballCollide.play();
       }
-      updateInterface();
     }
   }
 
@@ -204,7 +205,7 @@ function loadGame() {
         ballCollide.play();
       }
     }
-    if (bricks.length == 0) {
+    if (!paused && bricks.length == 0) {
       paused = true;
       updateInterface();
     }
@@ -239,6 +240,9 @@ function loadGame() {
       $('.main-text').text('GAME OVER - press "ENTER" to play again');
       themeSong.stop();
       gameOver.play();
+      aiming = false;
+      paused = true;    
+      postNewHighscore();
     } else if (!bricks.length) {
       startNewRound();
     } else if (paused) {
@@ -270,7 +274,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { aiming = false; e.preventDefault();}
+      if (e.which === 32) { aiming = false; e.preventDefault(); }
     });
 
     $(window).keyup(function (e) {
@@ -449,8 +453,19 @@ function loadGame() {
   // }
 
   // disables "rightclick" on the game
-  $(".game").on("contextmenu",function(){
-      return false;
+  $(".game").on("contextmenu", function () {
+    return false;
   });
+
+  $('.send-to-highscore').on('click', postNewHighscore);
+
+  function postNewHighscore() {
+    let name = prompt('Write your name');
+    $.post("/add-score", { name, score }, function (responseData) {
+      console.log('the new highscore-list is:', responseData);
+      console.error('append/use the new highscore-list then remove this console.error');
+    }); 
+  }
+
 
 }
