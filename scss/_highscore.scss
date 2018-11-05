@@ -1,13 +1,16 @@
 .high-score{
-  .first-place{
-    color: lightyellow;
-    animation: glow 1.5s ease-in-out infinite alternate;
-    font-weight: bold;
-  }
-  .second-place {
-    color: silver;
-  }
-  .third-place {
-    color: rgb(205,127,50);
+  .highscoreList tr{
+    &:nth-child(1){
+      color: lightyellow;
+      animation: glow 1.5s ease-in-out infinite alternate;
+      font-weight: bold;
+    }
+    &:nth-child(2){
+      color: silver;
+      font-weight: bold;
+    }
+    &:nth-child(3){
+      color: rgb(205,127,50);
+    }
   }
 }
