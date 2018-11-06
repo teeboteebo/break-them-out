@@ -117,11 +117,24 @@
     </section>
     <!-- Game control instructions-->
     <section class="card instructions container mt-4" style="display: none;">
-      <section class="col-12 text-center instructionsHolder">
-        <img class="controls-img leftimg" src="/imgs/left_img.png" alt="left key button image"> Move left
-        <img class="controls-img rightimg" src="/imgs/right_img.png" alt="right key button image"> Move right
-        <img class="controls-img enterimg" src="/imgs/enter_img.png" alt="enter key button image"> Pause
-        <img class="controls-img spaceimg" src="/imgs/space_img_PS2P.png" alt="space key button image"> Shoot the ball
+      <section class="row">
+        <section class="col-2 offset-2 col-lg-1 offset-lg-4">
+          <button class="lower-level btn btn-outline-light px-4"> &larr; </button>
+        </section>
+        <section class="col-4 col-lg-2">
+          <section class="text-center">Level: <span class="current-level">1</span></section>
+        </section>
+        <section class="col-2 col-lg-1">
+          <button class="higher-level btn btn-outline-light px-4"> &rarr; </button>
+        </section>
+      </section>
+      <section class="row">
+        <section class="col-12 text-center instructionsHolder">
+          <img class="controls-img leftimg" src="/imgs/left_img.png" alt="left key button image"> Move left
+          <img class="controls-img rightimg" src="/imgs/right_img.png" alt="right key button image"> Move right
+          <img class="controls-img enterimg" src="/imgs/enter_img.png" alt="enter key button image"> Pause
+          <img class="controls-img spaceimg" src="/imgs/space_img_PS2P.png" alt="space key button image"> Shoot the ball
+        </section>
       </section>
     </section>
     <!-- END_GAME -->

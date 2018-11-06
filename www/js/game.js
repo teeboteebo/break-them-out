@@ -11,9 +11,9 @@ function loadGame() {
   const ball = {};
   let gameBorders = loadGameBorders();
   let aiming = true;
-
-  // // Game styling variables this breaks the game?
   let level = 0;
+  let stage = 1;
+
   let backgrounds = [
     "url('/imgs/backgrounds/stage1.jpg')",
     "url('/imgs/backgrounds/stage2.jpg')",
@@ -451,7 +451,7 @@ function loadGame() {
       this.sound.pause();
     }
   }
-  // This breaks the game?
+
   function levelUp() {
     // "paddle.speed = initialPaddleSpeed*2" doesn't work for some reason?
     // Paddle.speed limit is 750
@@ -472,6 +472,37 @@ function loadGame() {
     }
     level++;
   }
+
+  function levelDown() {
+    if (paddle.speed > 300) {
+      initialPaddleSpeed = initialPaddleSpeed * 0.8;
+      paddle.speed = initialPaddleSpeed;
+    }
+    initialBallSpeed = initialBallSpeed * 0.8;
+
+    if (level < 0) {
+      level = 2;
+    }
+    if (level >= 0) {
+      $('.game').css("background-image", backgrounds[level]);
+      $('.paddle').css("background-image", paddles[level]);
+      $('.ball').css("background-image", balls[level]);
+      $('.brick').css("background-image", bricksstyle[level]);
+    }
+    level--;
+  }
+
+  $(".higher-level").on("click", function (){
+    levelUp();
+    stage++;
+    $(".current-level").text(stage);
+  });
+
+  $(".lower-level").on("click", function (){
+    levelDown();
+    stage--;
+    $(".current-level").text(stage);
+  });
 
   // disables "rightclick" on the game
   $(".game").on("contextmenu", function () {
