@@ -88,8 +88,9 @@ function loadGame() {
     aiming = true;
     resetBall();
     resetPaddle();
-    levelUp();
     spawnBricks();
+    levelUp();
+
     updateInterface();
 
     levelClear.play();
@@ -460,7 +461,6 @@ function loadGame() {
     }
     initialBallSpeed = initialBallSpeed * 1.25;
 
-
     if (level > 2.1) {
       level = 0;
     }
@@ -478,8 +478,6 @@ function loadGame() {
     return false;
   });
 
-
-
   $('.send-to-highscore').on('click', postNewHighscore);
 
   function postNewHighscore() {
@@ -489,6 +487,4 @@ function loadGame() {
       console.error('append/use the new highscore-list then remove this console.error');
     });
   }
-
-
 }
