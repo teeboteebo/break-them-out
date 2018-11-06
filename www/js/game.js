@@ -72,7 +72,8 @@ function loadGame() {
     score = 0;
     paused = false;
     aiming = true;
-
+    level = 0;
+    stage = 1;
     resetPaddle();
     resetBall();
     spawnBricks();
