@@ -471,6 +471,8 @@ function loadGame() {
       $('.brick').css("background-image", bricksstyle[level]);
     }
     level++;
+    $(".current-level").text(stage);
+    stage++;
   }
 
   function levelDown() {
@@ -490,18 +492,16 @@ function loadGame() {
       $('.brick').css("background-image", bricksstyle[level]);
     }
     level--;
+    $(".current-level").text(stage);
+    stage--;
   }
 
   $(".higher-level").on("click", function (){
     levelUp();
-    stage++;
-    $(".current-level").text(stage);
   });
 
   $(".lower-level").on("click", function (){
     levelDown();
-    stage--;
-    $(".current-level").text(stage);
   });
 
   // disables "rightclick" on the game
