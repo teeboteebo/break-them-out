@@ -1,5 +1,6 @@
+let translationData;
 $.getJSON('/json/content.json', function (data) {
-  jsonData = data;
+  translationData = data;
   createHistory("en");
 });
 
@@ -8,7 +9,7 @@ function createHistory(lang) {
   let titleImg = $(".history-img");
   let game = $(".history-gameplay");
   let ports = $(".history-ports");
-  let a = jsonData.history[lang];
+  let a = translationData.history[lang];
 
   title.html("<h3>" + a.title + "</h3>" + a.desc);
   titleImg.html('<img src="imgs/arcadeflyer.jpg">');
@@ -22,7 +23,7 @@ function createNavbar(lang){
   let historyPage = $(".history-page");
   let highScore = $(".highscore-page");
   let otherVersions = $(".other-versions");
-  let a = jsonData.navbar[lang];
+  let a = translationData.navbar[lang];
 
   playNow.html('<a class="nav-link" href="/game">' + a.play + '</a>');
   playNowStartPage.html('<a role="button" href="/game" class="btn btn-outline-light center-me my-5">' + a.playstart + '</a>');
@@ -39,7 +40,7 @@ function createStartPage(lang){
   let card1 = $(".card1");
   let card2 = $(".card2");
   let card3 = $(".card3");
-  let a = jsonData.cards[lang];
+  let a = translationData.cards[lang];
 
   cardHead.html('<h4>' + a.cardHeadline + '</h4>');
   card1.html('<h5 class="card-title">'+ a.card1Name + '</h5>' +
