@@ -121,8 +121,8 @@ html {
         z-index: 1;
         // changes the brick position to make it fit into 
         // the game in mobile devices
-        @media only screen and (max-width: 520px) {
-          left: 10px;
+        // @media only screen and (max-width: 520px) {
+        //   left: 10px;
           // width: 40px;
         }
       }
