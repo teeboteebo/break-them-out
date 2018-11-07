@@ -30,7 +30,7 @@ function frontendRouter(path){
       loadGame();
     },
     '/history': () => { $('body main > *').hide(); $('.history').show(); },
-    '/high-score': () => { $('body main > *').hide(); $('.high-score').show(); },
+    '/high-score': () => { $('body main > *').hide(); loadHiScore(); $('.high-score').show(); },
   };
   // no path found then change path to '/404';
   path = routes[path] ? path : '/404';

@@ -1,12 +1,18 @@
+loadHiScore();
+
 let highscoreJson;
-$.getJSON('/json/highscore.json', function (data) {
-  highscoreJson = data;
-  createHighscore();
-});
+
+function loadHiScore(){
+  $.getJSON('/json/highscore.json', function (data) {
+    highscoreJson = data;
+    createHighscore();
+  });
+}
 
 function createHighscore() {
   let a = highscoreJson;
   let highscore = $(".highscoreList");
+  highscore.empty();
 
   for (i = 0; i < highscoreJson.length; i++) {
     highscore.append(' <tr>' +
