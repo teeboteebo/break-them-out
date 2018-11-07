@@ -7,7 +7,6 @@ html {
 
     .instructions {
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px;
       @media only screen and (max-width: 1000px) {
         margin-top: 0px !important;
         //hides the pc game instuctions on media devices and if screen<1000px
@@ -15,7 +14,7 @@ html {
           display: none;
         }
       }
-      
+
       .enterimg {
         height: 70px;
       }
@@ -60,11 +59,10 @@ html {
       color: white;
       min-height: 90vh;
       padding: 0px;
-      width: 500px;
-      // changes game width for mobile devices
-      // @media only screen and (max-width: 520px) {
-      //   width: 90vw;
-      // }
+      width: 90vw;
+      @media only screen and (min-width: 500px){
+        width: 500px;
+      }
       // makes the text and buttons in the game unseletable, maybe change this to be done in JS/Jquery so it takes fewer lines
       -webkit-touch-callout: none;
       -webkit-user-select: none;
