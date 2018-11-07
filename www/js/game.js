@@ -521,13 +521,38 @@ function loadGame() {
     return false;
   });
 
-  $('.send-to-highscore').on('click', postNewHighscore);
+
+
+  //$('.send-to-highscore').on('click', postNewHighscore);
+
+  
+  $('.save-hi-score-name').unbind('click'); // so that we don't doublebind our click event handöler
+  $('.save-hi-score-name').click(function(){
+     let name = $('.player-name').val();
+     console.log("name",name);
+
+     if(name.length >=4){
+       $('.validate-message').text('Please enter max 3 character!').show();
+       return;
+     }
+
+     $('.validate-message').hide();
+     $('#highscore-name-modal').modal('hide');
+  
+     $.post("/add-score", { name:name, score:score }, function (responseData) {
+      console.log('the new highscore-list is:', responseData);
+      //console.error('append/use the new highscore-list then remove this console.error');
+      history.pushState('', '', '/high-score');
+      frontendRouter('/high-score');    
+    });
+
+  });
+  
 
   function postNewHighscore() {
-    let name = prompt("Write your name"); // fetch the name from your <input>/or otherwhere
-    $.post("/add-score", { name, score }, function (responseData) {
-      console.log('the new highscore-list is:', responseData);
-      console.error('append/use the new highscore-list then remove this console.error');
-    });
+
+    $('.validate-message').hide();
+    $('#highscore-name-modal').modal('show');
+
   }
 }
