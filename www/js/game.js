@@ -186,7 +186,7 @@ function loadGame() {
       ball.top = paddle.top - ball.height;
       //Score is not added while aiming
       if (!aiming) {
-        score += 5;
+        // score += 5;
         ballCollide.play();
       }
       updateInterface();
@@ -206,7 +206,7 @@ function loadGame() {
         }
         brick.$.remove();
         bricks.splice(i, 1);
-        score += 20;
+        score += 25;
         updateInterface();
         ballCollide.play();
       }
