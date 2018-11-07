@@ -20,6 +20,9 @@ body {
     h2 {
       text-decoration: underline;
       font-size: 2.5rem;
+      @media only screen and (max-width: 500px) {
+        font-size: 2rem;
+      }
     }
   }
 }
