@@ -1,13 +1,14 @@
+let highscoreJson;
 $.getJSON('/json/highscore.json', function (data) {
-  jsonData = data;
+  highscoreJson = data;
   createHighscore();
 });
 
 function createHighscore() {
-  let a = jsonData;
+  let a = highscoreJson;
   let highscore = $(".highscoreList");
 
-  for (i = 0; i < 10; i++) {
+  for (i = 0; i < highscoreJson.length; i++) {
     highscore.append(' <tr>' +
       ' <th scope="row">' + (i+1) + '</th>' +
       ' <td>' + a[i]["name"] + '</td>' +

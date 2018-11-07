@@ -1,16 +1,16 @@
 .high-score{
   .highscoreList tr{
     &:nth-child(1){
-      color: lightyellow;
+      color: #ffff7f;
       animation: glow 1.5s ease-in-out infinite alternate;
       font-weight: bold;
     }
     &:nth-child(2){
-      color: silver;
+      color: #c0c0c0;
       font-weight: bold;
     }
     &:nth-child(3){
-      color: rgb(205,127,50);
+      color: #cd7f32;
     }
   }
 }
