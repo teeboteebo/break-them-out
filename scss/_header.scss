@@ -9,5 +9,15 @@ header {
       position: absolute;
       right: 10px;
     }
+    .no-border{
+      border: none;
+    }
+    .back-hover{
+      transition: 0.4s;
+    }
+    .back-hover:hover{
+      background-color: gray;
+      color: white;
+    }
   }
 }
