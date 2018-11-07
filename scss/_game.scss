@@ -7,7 +7,6 @@ html {
 
     .instructions {
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px;
       @media only screen and (max-width: 1000px) {
         margin-top: 0px !important;
         .instructionsHolder {
@@ -60,9 +59,6 @@ html {
       min-height: 90vh;
       padding: 0px;
       width: 90vw;
-      @media only screen and (min-device-width: 500px){
-        width: 90vw;
-      }
       @media only screen and (min-width: 500px){
         width: 500px;
       }

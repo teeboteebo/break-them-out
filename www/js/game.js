@@ -366,6 +366,11 @@ function loadGame() {
       0, 0, 0, 0, 0
     ];
 
+    if (gameBorders.width < 490){
+      colors.pop();
+      colors.pop();
+    }
+
     let prevLeft = brickCSS.left;
 
     for (let color of colors) {
@@ -376,29 +381,38 @@ function loadGame() {
 
       prevLeft += brickCSS.width * 1.5;
     }
+    prevLeft = brickCSS.left;
+
     for (let color of colors) {
-      const brick = createBrick(prevLeft - 375, brickCSS.top + 50, brickCSS.width, brickCSS.height);
+      const brick = createBrick(prevLeft, brickCSS.top + 50, brickCSS.width, brickCSS.height);
 
       bricks.push(brick);
       $('.game').append(brick.$);
 
       prevLeft += brickCSS.width * 1.5;
     }
-    for (let color of colors) {
-      const brick = createBrick(prevLeft - 750, brickCSS.top + 100, brickCSS.width, brickCSS.height);
+    prevLeft = brickCSS.left;
 
-      bricks.push(brick);
-      $('.game').append(brick.$);
+    if (gameBorders.height > 500){
 
-      prevLeft += brickCSS.width * 1.5;
-    }
-    for (let color of colors) {
-      const brick = createBrick(prevLeft - 1125, brickCSS.top + 150, brickCSS.width, brickCSS.height);
+      for (let color of colors) {
+        const brick = createBrick(prevLeft, brickCSS.top + 100, brickCSS.width, brickCSS.height);
 
-      bricks.push(brick);
-      $('.game').append(brick.$);
+        bricks.push(brick);
+        $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 1.5;
+        prevLeft += brickCSS.width * 1.5;
+      }
+      prevLeft = brickCSS.left;
+
+      for (let color of colors) {
+        const brick = createBrick(prevLeft, brickCSS.top + 150, brickCSS.width, brickCSS.height);
+
+        bricks.push(brick);
+        $('.game').append(brick.$);
+
+        prevLeft += brickCSS.width * 1.5;
+      }
     }
   }
 
@@ -424,15 +438,12 @@ function loadGame() {
   }
 
   function startInterval() {
-    const updateSpeed = 5; // lower = faster
+    const updateSpeed = 10; // lower = faster
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
     setTimeout(() => {
-      let previousTime = performance.now() - updateSpeed;
       window.gameInterval = setInterval(() => {
-        const now = performance.now();
-        updateGame((now - previousTime) / 1000);
-        previousTime = now;
+        updateGame(updateSpeed / 1000);
       }, updateSpeed);
     }, 1000);
   }
@@ -454,7 +465,7 @@ function loadGame() {
   }
 
   function levelUp() {
-    // "paddle.speed = initialPaddleSpeed*2" doesn't work for some reason?
+    // "paddle.speed = initialPaddleSpeed*1.25" doesn't work for some reason?
     // Paddle.speed limit is 750
     if (paddle.speed < 750) {
       initialPaddleSpeed = initialPaddleSpeed * 1.25;
