@@ -530,4 +530,8 @@ function loadGame() {
       console.error('append/use the new highscore-list then remove this console.error');
     });
   }
+
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 }
