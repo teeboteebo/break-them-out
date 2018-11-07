@@ -9,6 +9,7 @@ html {
       background-color: rgba(0, 0, 0, 0.5);
       @media only screen and (max-width: 1000px) {
         margin-top: 0px !important;
+        //hides the pc game instuctions on media devices and if screen<1000px
         .instructionsHolder {
           display: none;
         }
@@ -59,8 +60,10 @@ html {
       min-height: 90vh;
       padding: 0px;
       width: 90vw;
+      font-size: .8rem;
       @media only screen and (min-width: 500px){
         width: 500px;
+        font-size: 1rem;
       }
       // makes the text and buttons in the game unseletable, maybe change this to be done in JS/Jquery so it takes fewer lines
       -webkit-touch-callout: none;
@@ -116,6 +119,12 @@ html {
         background-size: 100% 100%;
         position: absolute;
         z-index: 1;
+        // changes the brick position to make it fit into 
+        // the game in mobile devices
+        // @media only screen and (max-width: 520px) {
+        //   left: 10px;
+          // width: 40px;
+        // }
       }
 
       .ball {
