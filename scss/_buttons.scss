@@ -16,7 +16,7 @@
     // width: 40%;
     outline: none;
     @media only screen and (min-width:1200px) {
-      display: none;
+      display: none !important;
     }
   }
   .controls{
@@ -36,13 +36,15 @@
     left: 25%;
     top: 50%;
     font-size: 12px;
-    color: rgba(0, 0, 0, 1);
-    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: url('/imgs/fire.gif');
+    border: 2px solid white;
     height: 10%;
     width: 50%;
     z-index: 2;
   }
-  // .centerBtnGrp{    
+  // .centerBtnGrp{
   //   position: absolute;
   //   height: 100%;
   //   width: 100%;
