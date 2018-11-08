@@ -67,11 +67,26 @@ function createHighscorePage(lang) {
 
 }
 
+function createModal(lang){
+  let gameOver = $(".modal-header");
+  let printName = $(".modal-body");
+  let saveResult = $ (".modal-footer");
+  let a = translationData.modal[lang];
+
+  gameOver.html('<h5 class="modal-title" id="exampleModalLabel">' + a.modalHeadline + '</h5>');
+  printName.html('<input type="text" class="player-name form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">' + '<div class="validate-message"/><div>' + '<p class="modal-text">' + a.modalText + '</p>' + '</div>');
+  saveResult.html('<button type="button" class="save-hi-score-name style-btn">' + a.modalSave + '</button>');
+  let alertMessage = $('.validate-message')
+  alertMessage.html(a.pleaseAlert);
+
+}
+
 $('.swe-btn').click(function () {
   createHistory('sv');
   createNavbar('sv');
   createStartPage('sv');
   createHighscorePage('sv');
+  createModal('sv');
 });
 
 $('.eng-btn').click(function () {
@@ -79,4 +94,5 @@ $('.eng-btn').click(function () {
   createNavbar('en');
   createStartPage('en');
   createHighscorePage('en');
+  createModal('en');
 });

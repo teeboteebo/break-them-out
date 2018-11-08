@@ -547,8 +547,9 @@ function loadGame() {
      let name = $('.player-name').val();
      console.log("name",name);
 
-     if(name.length >=4){
-       $('.validate-message').text('Please enter max 3 character!').show();
+     if(name.length > 3){
+       console.log("HEJ");
+       $('.validate-message').show();
        return;
      }
 

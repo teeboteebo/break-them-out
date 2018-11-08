@@ -18,12 +18,12 @@
     }
   },
   "highscoreHeadline": {
-    "sv":{
+    "sv": {
       "highscore": "Topplista",
       "highscoreName": "Namn",
       "points": "Poäng"
     },
-    "en":{
+    "en": {
       "highscore": "Highscore",
       "highscoreName": "Name",
       "points": "Score"
@@ -74,5 +74,21 @@
       "card3Desc": "Go to Atari",
       "cardButton": "PLAY"
     }
+
+  },
+  "modal": {
+    "sv": {
+      "modalHeadline": "SLUT",
+      "modalText": "Vänligen skriv in ditt namn",
+      "modalSave": "Spara resultatet",
+      "pleaseAlert": "Var god skriv in max 3 bokstäver!"
+    },
+    "en": {
+      "modalHeadline": "GAME OVER",
+      "modalText": "Type in name to save your score",
+      "modalSave": "Save Score",
+      "pleaseAlert": "Please enter max 3 character!"
+    }
   }
+
 }
