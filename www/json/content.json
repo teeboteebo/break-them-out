@@ -17,6 +17,18 @@
       "ports": "<p>The original arcade version of Breakout was ported to the Atari 2600 by Brad Stewart. Brad Stewart and Ian Shepherd were both available to program Breakout for the 2600 and competed in the original version of Breakout for the programming rights; Brad won.</p>"
     }
   },
+  "highscoreHeadline": {
+    "sv":{
+      "highscore": "Topplista",
+      "highscoreName": "Namn",
+      "points": "Poäng"
+    },
+    "en":{
+      "highscore": "Highscore",
+      "highscoreName": "Name",
+      "points": "Score"
+    }
+  },
   "navbar": {
     "sv": {
       "play": "Spela Nu",
@@ -61,18 +73,6 @@
       "card3Name": "Atari Breakout",
       "card3Desc": "Go to Atari",
       "cardButton": "PLAY"
-    }
-  },
-  "game": {
-    "sv": {
-      "score": "POÄNG:",
-      "lives": "LIV:",
-      "game-over": "DU FÖRLORADE - TRYCK ENTER FÖR ATT SPELA IGEN"
-    },
-    "en": {
-      "score": "SCORE:",
-      "lives": "LIVES:",
-      "game-over": "GAME OVER - PRESS ENTER TO PLAY AGAIN"
     }
   }
 }
