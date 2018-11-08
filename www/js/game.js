@@ -81,6 +81,7 @@ function loadGame() {
     updateInterface();
     startInterval();
     themeSong.play();
+    $(".shootBtn").show();
   }
 
   // Loads in a new set of bricks in allowing you to keep on player upon clearing
@@ -91,10 +92,11 @@ function loadGame() {
     resetPaddle();
     spawnBricks();
     levelUp();
-
+    
     updateInterface();
 
     levelClear.play();
+    $(".shootBtn").show();
   }
 
   //This stops movement of paddle and ball while paused
@@ -143,6 +145,7 @@ function loadGame() {
     updateInterface();
     resetBall();
     ballMiss.play();
+    $(".shootBtn").show();
   }
 
   function collisionDetectBallAndGame() {
@@ -282,7 +285,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { aiming = false; e.preventDefault(); }
+      if (e.which === 32) { aiming = false; $(".shootBtn").hide(); e.preventDefault(); }
     });
 
     $(window).keyup(function (e) {
@@ -302,12 +305,25 @@ function loadGame() {
 
       keysPressed.left = true;
     });
+
+    $(".shootBtn").on("touchstart mousedown", function () {
+      console.log("keysPressed");
+
+      aiming = false; 
+      $(".shootBtn").hide();
+    });
+
     $(".rightBtn").on("touchend mouseup", function () {
       keysPressed.right = false;
     });
 
     $(".leftBtn").on("touchend mouseup", function () {
       keysPressed.left = false;
+    });
+
+    $(".shootBtn").on("touchend mouseup", function () {
+      aiming = false; 
+      $(".shootBtn").hide();
     });
 
     $(".pause-game").on("mousedown", function () {
