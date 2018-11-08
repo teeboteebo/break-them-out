@@ -285,7 +285,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 32) { aiming = false; e.preventDefault(); }
+      if (e.which === 32) { aiming = false; $(".shootBtn").hide(); e.preventDefault(); }
     });
 
     $(window).keyup(function (e) {
@@ -323,7 +323,7 @@ function loadGame() {
 
     $(".shootBtn").on("touchend mouseup", function () {
       aiming = false; 
-      $(".shootBtn")
+      $(".shootBtn").hide();
     });
 
     $(".pause-game").on("mousedown", function () {
