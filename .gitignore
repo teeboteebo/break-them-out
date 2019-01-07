@@ -59,12 +59,5 @@ typings/
 
 # next.js build output
 .next
-
-www/css/style\.css
-
-www/ccs/
-*.css
-
-www/css/
 
 www/json/highscore\.json
